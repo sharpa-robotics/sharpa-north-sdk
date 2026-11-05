@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="715" viewBox="0 0 1200 715" role="img" aria-labelledby="title description">
+<title id="title">Hand tactile data: finger channel numbers</title>
+<desc id="description">finger=0 little, 1 ring, 2 middle, 3 index, 4 thumb. Both hands use these numbers; select side separately.</desc>
+<defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+              <marker id="muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+            </defs>
+            <style>
+              text{font-family:"Noto Sans CJK SC",Arial,sans-serif;fill:#1e293b}
+              .title{font-size:30px;font-weight:700}.heading{font-size:24px;font-weight:700}
+              .body{font-size:22px}.small{font-size:19px}.code{font-family:"DejaVu Sans Mono","Noto Sans CJK SC",monospace;font-size:20px}
+              .muted{fill:#475569}.blue{fill:#1d4ed8}.green{fill:#047857}.red{fill:#b91c1c}
+            </style>
+<rect width="1200" height="715" rx="16" fill="#f8fafc"/>
+<text x="36" y="53" class="title" text-anchor="start">Hand tactile data: finger channel numbers</text>
+<path d="M393 470 L393 325 Q393 300 417 300 Q441 300 441 325 L441 391 L455 391 L455 244 Q455 218 480 218 Q505 218 505 244 L505 380 L520 380 L520 220 Q520 194 545 194 Q570 194 570 220 L570 380 L585 380 L585 250 Q585 224 610 224 Q635 224 635 250 L635 421 L680 372 Q699 350 718 369 Q736 387 718 411 L670 489 Q651 533 605 553 L605 580 L436 580 L436 552 Q393 527 393 470Z" fill="#dbeafe" stroke="#64748b" stroke-width="3"/>
+<line x1="139" y1="355" x2="417" y2="329" stroke="#94a3b8" stroke-width="2"/>
+<rect x="54" y="303" width="170" height="53" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="139" y="338" class="body" text-anchor="middle">Little finger</text>
+<circle cx="417" cy="329" r="21" fill="#2563eb"/>
+<text x="417" y="337" class="heading" text-anchor="middle" style="fill:white">0</text>
+<line x1="323" y1="157" x2="480" y2="250" stroke="#94a3b8" stroke-width="2"/>
+<rect x="238" y="105" width="170" height="53" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="323" y="140" class="body" text-anchor="middle">Ring finger</text>
+<circle cx="480" cy="250" r="21" fill="#2563eb"/>
+<text x="480" y="258" class="heading" text-anchor="middle" style="fill:white">1</text>
+<line x1="548" y1="133" x2="545" y2="226" stroke="#94a3b8" stroke-width="2"/>
+<rect x="463" y="81" width="170" height="53" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="548" y="116" class="body" text-anchor="middle">Middle finger</text>
+<circle cx="545" cy="226" r="21" fill="#2563eb"/>
+<text x="545" y="234" class="heading" text-anchor="middle" style="fill:white">2</text>
+<line x1="826" y1="179" x2="610" y2="256" stroke="#94a3b8" stroke-width="2"/>
+<rect x="741" y="127" width="170" height="53" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="826" y="162" class="body" text-anchor="middle">Index finger</text>
+<circle cx="610" cy="256" r="21" fill="#2563eb"/>
+<text x="610" y="264" class="heading" text-anchor="middle" style="fill:white">3</text>
+<line x1="975" y1="416" x2="700" y2="386" stroke="#94a3b8" stroke-width="2"/>
+<rect x="890" y="364" width="170" height="53" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="975" y="399" class="body" text-anchor="middle">Thumb</text>
+<circle cx="700" cy="386" r="21" fill="#2563eb"/>
+<text x="700" y="394" class="heading" text-anchor="middle" style="fill:white">4</text>
+<text x="600" y="621" class="body" text-anchor="middle">Both hands use the same numbers for the same finger.</text>
+<text x="600" y="668" class="code blue" text-anchor="middle">sdk.hand(Side::kLeft).on_tactile_image(4, kind, callback)</text>
+</svg>

@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "version": "4.4",
+  "source_url": "https://codeload.github.com/richardcochran/linuxptp/tar.gz/refs/tags/v4.4",
+  "source_sha256": "61757bc0a58d789b8fcbdddf56c88a0230597184a70dcb2ac05b4c6b619f7d5c",
+  "architecture": "x86_64",
+  "ubuntu": [
+    "22.04",
+    "24.04"
+  ],
+  "modes": [
+    "hardware",
+    "software"
+  ],
+  "build": {
+    "cross": false,
+    "compiler": "gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+    "sysroot": null
+  },
+  "files": {
+    "COPYING": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+    "bin/pmc": "5db9464fadb3535ac2697b33af458d5c4956f3c9f9cebe079f1b2feba1617e43",
+    "bin/ptp4l": "ffddcaaeed3cd6e3ca1555817cbb78f35ba6dc4da330b11ce5870961a313dd19",
+    "build_timesync_runtime.py": "a27ff8b0421582af8708efff13f710a9e4991173d7cf4e61357dc9470ce75684",
+    "source.tar.gz": "61757bc0a58d789b8fcbdddf56c88a0230597184a70dcb2ac05b4c6b619f7d5c"
+  }
+}

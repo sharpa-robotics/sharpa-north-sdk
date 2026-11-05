@@ -1,0 +1,301 @@
+#!/usr/bin/python3
+"""Authorize offline NorthSDK gPTP preparation; software mode manages system time."""
+import argparse
+import fcntl
+import hashlib
+import json
+import os
+from pathlib import Path
+import pwd
+import shutil
+import stat
+import subprocess
+import sys
+import tempfile
+
+PREFIX = Path("/opt/northsdk-timesync")
+CONFIG = Path("/etc/northsdk-timesync.json")
+UNITS = Path("/etc/systemd/system")
+COMPONENT_FILES = (
+    "service.py",
+    "slave.cfg",
+    "northsdk-timesync.service",
+    "northsdk-timesync.socket",
+    "runtime/MANIFEST.json",
+)
+
+
+def check_package_match(source):
+    mismatched = []
+    for name in COMPONENT_FILES:
+        expected = source / name
+        installed = PREFIX / name
+        if not expected.is_file():
+            raise ValueError("incomplete SDK package: missing " + str(expected))
+        if not installed.is_file() or installed.read_bytes() != expected.read_bytes():
+            mismatched.append(name)
+    if mismatched:
+        raise ValueError(
+            "installed host component does not match this SDK package: "
+            + ", ".join(mismatched)
+            + ". Re-run this package's tools/setup-host with sudo and "
+            "--user <SDK account>, then run check again."
+        )
+
+
+def validate_runtime(root):
+    manifest = json.loads((root / "MANIFEST.json").read_text())
+    if manifest.get("schema") != 1 or manifest.get("modes") != ["hardware", "software"]:
+        raise ValueError("unsupported time-sync runtime manifest")
+    machine = os.uname().machine
+    if manifest["architecture"] != machine:
+        raise ValueError("time-sync runtime architecture does not match this machine")
+    release = dict(
+        line.split("=", 1)
+        for line in Path("/etc/os-release").read_text().splitlines()
+        if "=" in line
+    )
+    ubuntu = release.get("VERSION_ID", "").strip('"')
+    if (
+        release.get("ID", "").strip('"') != "ubuntu"
+        or ubuntu not in ("22.04", "24.04")
+        or ubuntu not in manifest["ubuntu"]
+    ):
+        raise ValueError("time-sync runtime is not validated for this Ubuntu version")
+    for name, expected in manifest["files"].items():
+        file = root / name
+        if not file.resolve().is_relative_to(root.resolve()) or not file.is_file():
+            raise ValueError("unsafe runtime manifest path")
+        if hashlib.sha256(file.read_bytes()).hexdigest() != expected:
+            raise ValueError("time-sync runtime checksum mismatch: " + name)
+    for name in ("bin/ptp4l", "bin/pmc", "COPYING", "source.tar.gz"):
+        if name not in manifest["files"]:
+            raise ValueError("incomplete offline time-sync runtime: " + name)
+    for name in ("ptp4l", "pmc"):
+        subprocess.run(
+            [str(root / "bin" / name), "-v"], check=True, capture_output=True, timeout=3
+        )
+    return manifest
+
+
+def run(*args):
+    subprocess.run(args, check=True)
+
+
+def activate(source, account, allow_system_time=True):
+    """Replace only SDK-owned files and restore the previous setup on failure."""
+    stage = Path(tempfile.mkdtemp(prefix=".northsdk-timesync-", dir=PREFIX.parent))
+    backup = PREFIX.with_name(".northsdk-timesync-backup")
+    files = [
+        CONFIG,
+        UNITS / "northsdk-timesync.service",
+        UNITS / "northsdk-timesync.socket",
+    ]
+    saved = {
+        path: (
+            (path.read_bytes(), stat.S_IMODE(path.stat().st_mode))
+            if path.exists()
+            else None
+        )
+        for path in files
+    }
+    existed = PREFIX.exists()
+    installed = False
+    old_moved = False
+    enabled = (
+        subprocess.run(
+            ["systemctl", "is-enabled", "--quiet", "northsdk-timesync.socket"],
+            capture_output=True,
+        ).returncode
+        == 0
+    )
+    active = (
+        subprocess.run(
+            ["systemctl", "is-active", "--quiet", "northsdk-timesync.socket"],
+            capture_output=True,
+        ).returncode
+        == 0
+    )
+    try:
+        if backup.exists():
+            raise ValueError(
+                "unfinished installation backup exists; inspect it before retrying"
+            )
+        if any(path.is_symlink() for path in source.rglob("*")):
+            raise ValueError("time-sync installation must not contain symlinks")
+        shutil.copytree(source, stage, dirs_exist_ok=True)
+        for path in stage.rglob("*"):
+            if path.is_symlink():
+                raise ValueError("time-sync installation must not contain symlinks")
+            os.chmod(
+                path, 0o755 if path.is_dir() or path.name in ("ptp4l", "pmc") else 0o644
+            )
+        os.chmod(stage, 0o755)
+        (stage / "OWNER").write_text("NorthSDK time-sync host component v1\n")
+        if existed:
+            run(
+                "systemctl",
+                "stop",
+                "northsdk-timesync.socket",
+                "northsdk-timesync.service",
+            )
+            ensure_recovered()
+            PREFIX.rename(backup)
+            old_moved = True
+        stage.rename(PREFIX)
+        installed = True
+        CONFIG.write_text(
+            json.dumps(
+                {
+                    "allowed_uids": [account.pw_uid],
+                    "allow_system_time": allow_system_time,
+                }
+            )
+            + "\n"
+        )
+        os.chmod(CONFIG, 0o600)
+        files[1].write_text((source / "northsdk-timesync.service").read_text())
+        files[2].write_text(
+            (source / "northsdk-timesync.socket")
+            .read_text()
+            .replace("@GROUP@", str(account.pw_gid))
+        )
+        os.chmod(files[1], 0o644)
+        os.chmod(files[2], 0o644)
+        run("systemctl", "daemon-reload")
+        run("systemctl", "enable", "--now", "northsdk-timesync.socket")
+    except BaseException:
+        if installed:
+            # Best effort stop before restoring files; never target external units.
+            subprocess.run(
+                [
+                    "systemctl",
+                    "stop",
+                    "northsdk-timesync.socket",
+                    "northsdk-timesync.service",
+                ],
+                check=False,
+            )
+            subprocess.run(
+                ["systemctl", "disable", "northsdk-timesync.socket"], check=False
+            )
+            shutil.rmtree(PREFIX)
+        if old_moved:
+            backup.rename(PREFIX)
+        if installed or old_moved:
+            for path, old in saved.items():
+                if old is None:
+                    path.unlink(missing_ok=True)
+                else:
+                    path.write_bytes(old[0])
+                    os.chmod(path, old[1])
+            run("systemctl", "daemon-reload")
+            if enabled:
+                run("systemctl", "enable", "northsdk-timesync.socket")
+            if active:
+                run("systemctl", "start", "northsdk-timesync.socket")
+        raise
+    else:
+        if old_moved:
+            shutil.rmtree(backup)
+    finally:
+        if stage.exists():
+            shutil.rmtree(stage)
+
+
+def ensure_recovered():
+    if Path("/run/northsdk-timesync/ntp-state.json").exists():
+        raise ValueError(
+            "system time recovery is incomplete; keep the installation and inspect northsdk-timesync.service logs"
+        )
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "action",
+        choices=("install", "check", "uninstall"),
+        nargs="?",
+        default="install",
+    )
+    parser.add_argument("--user", default=os.environ.get("SUDO_USER"))
+    parser.add_argument(
+        "--no-system-time",
+        action="store_true",
+        help="authorize hardware PHC synchronization only",
+    )
+    args = parser.parse_args()
+    source = Path(__file__).resolve().parent / "timesync"
+    if args.action == "check":
+        for path in (
+            PREFIX / "runtime/MANIFEST.json",
+            CONFIG,
+            UNITS / "northsdk-timesync.socket",
+            UNITS / "northsdk-timesync.service",
+        ):
+            if not path.is_file():
+                raise SystemExit("missing " + str(path))
+        check_package_match(source)
+        validate_runtime(PREFIX / "runtime")
+        run("systemctl", "is-active", "northsdk-timesync.socket")
+        print("Host setup matches this SDK package. Clock readiness is checked by SDK connect().")
+        return
+    if os.geteuid() != 0:
+        raise SystemExit(
+            "Run this one-time setup with administrator authorization (sudo)."
+        )
+    if not Path("/run/systemd/system").is_dir():
+        raise SystemExit("Host setup requires systemd on Ubuntu 22.04/24.04.")
+    # Serialize administrative upgrades independently of SDK client concurrency.
+    guard = open("/run/lock/northsdk-timesync-setup.lock", "a")
+    fcntl.flock(guard, fcntl.LOCK_EX)
+    if args.action == "uninstall":
+        if not (PREFIX / "OWNER").is_file():
+            raise SystemExit("No SDK-owned installation; nothing removed.")
+        run("systemctl", "disable", "--now", "northsdk-timesync.socket")
+        run("systemctl", "stop", "northsdk-timesync.service")
+        ensure_recovered()
+        for name in ("northsdk-timesync.socket", "northsdk-timesync.service"):
+            (UNITS / name).unlink(missing_ok=True)
+        CONFIG.unlink(missing_ok=True)
+        shutil.rmtree(PREFIX)
+        run("systemctl", "daemon-reload")
+        return
+    if not args.user or args.user == "root":
+        raise SystemExit(
+            "Specify the ordinary SDK account with --user; do not run the SDK as root."
+        )
+    account = pwd.getpwnam(args.user)
+    runtime = source / "runtime"
+    validate_runtime(runtime)  # Finish all validation before stopping anything.
+    if PREFIX.exists() and not (PREFIX / "OWNER").is_file():
+        raise SystemExit("Refusing to overwrite a non-SDK installation.")
+    if CONFIG.exists() and not (PREFIX / "OWNER").is_file():
+        raise SystemExit("Refusing to overwrite an unknown configuration.")
+    for name in ("northsdk-timesync.socket", "northsdk-timesync.service"):
+        if (UNITS / name).exists() and not (PREFIX / "OWNER").is_file():
+            raise SystemExit("Refusing to overwrite an unknown unit.")
+    # One account/group per installation. Reinstall by the same account is safe;
+    # changing the authorized account is an explicit administrative operation.
+    if CONFIG.exists() and json.loads(CONFIG.read_text())["allowed_uids"] != [
+        account.pw_uid
+    ]:
+        raise SystemExit(
+            "Installation belongs to another account; uninstall explicitly before changing ownership."
+        )
+    activate(source, account, not args.no_system_time)
+    print(
+        "Host setup ready. SDK connect() prepares gPTP automatically. "
+        + (
+            "Software mode may step CLOCK_REALTIME and temporarily pause recognized NTP services."
+            if not args.no_system_time
+            else "System-time changes are not authorized."
+        )
+    )
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (OSError, ValueError, KeyError, subprocess.SubprocessError) as error:
+        raise SystemExit("Host setup failed: " + str(error))

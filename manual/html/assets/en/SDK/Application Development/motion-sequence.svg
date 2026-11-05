@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1050" viewBox="0 0 1200 1050" role="img" aria-labelledby="title description">
+<title id="title">Joint-command submission and motion completion</title>
+<desc id="description">Prepare runtime conditions, wait for fresh RUNNING, submit planned targets, then check device feedback for completion.</desc>
+<defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+              <marker id="muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+            </defs>
+            <style>
+              text{font-family:"Noto Sans CJK SC",Arial,sans-serif;fill:#1e293b}
+              .title{font-size:30px;font-weight:700}.heading{font-size:24px;font-weight:700}
+              .body{font-size:22px}.small{font-size:19px}.code{font-family:"DejaVu Sans Mono","Noto Sans CJK SC",monospace;font-size:20px}
+              .muted{fill:#475569}.blue{fill:#1d4ed8}.green{fill:#047857}.red{fill:#b91c1c}
+            </style>
+<rect width="1200" height="1050" rx="16" fill="#f8fafc"/>
+<text x="36" y="53" class="title" text-anchor="start">Joint-command submission and motion completion</text>
+<rect x="36" y="85" width="1128" height="107" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+<text x="60" y="119" class="body" text-anchor="start">Before calling: connected, task prepared, devices enabled in position mode.</text>
+<text x="60" y="154" class="body" text-anchor="start">Select an explicit command channel; plan and bound targets in the application.</text>
+<rect x="55" y="220" width="270" height="54" rx="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="190" y="255" class="heading" text-anchor="middle">Application</text>
+<line x1="190" y1="274" x2="190" y2="968" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7 7"/>
+<rect x="465" y="220" width="270" height="54" rx="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="600" y="255" class="heading" text-anchor="middle">North SDK</text>
+<line x1="600" y1="274" x2="600" y2="968" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7 7"/>
+<rect x="875" y="220" width="270" height="54" rx="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="1010" y="255" class="heading" text-anchor="middle">Robot</text>
+<line x1="1010" y1="274" x2="1010" y2="968" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7 7"/>
+<text x="805" y="315" class="small" text-anchor="middle">Fresh Master status: RUNNING</text>
+<line x1="1010" y1="333" x2="600" y2="333" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="395" y="382" class="small" text-anchor="middle">Observe state and confirm conditions</text>
+<line x1="600" y1="400" x2="190" y2="400" stroke="#64748b" stroke-width="2.5" marker-end="url(#muted-arrow)" stroke-dasharray="7 6"/>
+<text x="395" y="450" class="code" text-anchor="middle">send_joint_positions(target)</text>
+<line x1="190" y1="468" x2="600" y2="468" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="452" y="494" width="298" height="109" rx="12" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="601" y="526" class="small blue" text-anchor="middle">Validate target and runtime</text>
+<text x="601" y="557" class="small blue" text-anchor="middle">Fresh RUNNING</text>
+<text x="601" y="586" class="small blue" text-anchor="middle">Channel matches Master mode</text>
+<rect x="36" y="507" width="358" height="100" rx="12" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+<text x="58" y="539" class="small red" text-anchor="start">Validation fails: no submission</text>
+<text x="58" y="571" class="small red" text-anchor="start">Inspect error; reassess conditions</text>
+<text x="805" y="641" class="small" text-anchor="middle">Valid → submit command</text>
+<line x1="600" y1="659" x2="1010" y2="659" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="395" y="710" class="small green" text-anchor="middle">Status OK: submission succeeded</text>
+<line x1="600" y1="728" x2="190" y2="728" stroke="#64748b" stroke-width="2.5" marker-end="url(#muted-arrow)" stroke-dasharray="7 6"/>
+<text x="805" y="780" class="small" text-anchor="middle">Subsequent device state</text>
+<line x1="1010" y1="798" x2="600" y2="798" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="395" y="848" class="small" text-anchor="middle">on_state / latest_state: fresh position</text>
+<line x1="600" y1="866" x2="190" y2="866" stroke="#64748b" stroke-width="2.5" marker-end="url(#muted-arrow)" stroke-dasharray="7 6"/>
+<rect x="36" y="891" width="406" height="73" rx="12" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1.5"/>
+<text x="239" y="920" class="small green" text-anchor="middle">Compare target and actual position</text>
+<text x="239" y="949" class="small green" text-anchor="middle">Use application tolerance for completion</text>
+<text x="36" y="1011" class="small muted" text-anchor="start">WholeBody passes channel to send(); single-part sends use SdkConfig.command_channel.</text>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="940" viewBox="0 0 1440 940" role="img" aria-labelledby="title">
+<title id="title">SDK 功能与 Client 对应关系</title>
+<style>text{font-family:"Noto Sans CJK SC",Arial,sans-serif;fill:#1e293b} .title{font-size:30px;font-weight:700} .heading{font-size:25px;font-weight:700} .body{font-size:20px;fill:#475569} .code{font-family:"DejaVu Sans Mono",monospace;font-size:20px} .label{font-size:20px;font-weight:700;fill:#64748b}</style>
+<rect width="1440" height="940" rx="16" fill="#f8fafc"/>
+<text x="40" y="54" class="title">SDK 功能与 Client 对应关系</text>
+<rect x="560" y="85" width="320" height="65" rx="12" fill="#dbeafe" stroke="#93c5fd"/>
+<text x="720" y="127" class="heading" text-anchor="middle">NorthSDK</text>
+<path d="M720 150V178H20V640M20 178H1067.5M372.5 178V200M1067.5 178V200M20 410H1237.5M202.5 410V420M547.5 410V420M892.5 410V420M1237.5 410V420M20 640H1270M170 640V650M445 640V650M720 640V650M995 640V650M1270 640V650" fill="none" stroke="#94a3b8" stroke-width="2"/>
+
+<rect x="40" y="200" width="665" height="155" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="62" y="236" class="heading">系统与任务</text>
+<text x="62" y="270" class="code">MasterClient</text>
+<text x="62" y="302" class="code">sdk.master()</text>
+<text x="62" y="335" class="body">状态、健康、事件与系统服务</text>
+<rect x="735" y="200" width="665" height="155" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="757" y="236" class="heading">整机组合控制</text>
+<text x="757" y="270" class="code">WholeBodyClient</text>
+<text x="757" y="302" class="code">sdk.whole_body()</text>
+<text x="757" y="335" class="body">组合关节位置与底盘速度命令</text>
+<text x="40" y="400" class="label">机器人部位</text>
+<rect x="40" y="420" width="325" height="160" rx="12" fill="#eff6ff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="62" y="456" class="heading">臂</text>
+<text x="62" y="490" class="code">ArmClient</text>
+<text x="62" y="522" class="code">sdk.arm(side)</text>
+<text x="62" y="555" class="body">左臂 / 右臂，各 7 关节</text>
+<rect x="385" y="420" width="325" height="160" rx="12" fill="#eff6ff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="407" y="456" class="heading">手</text>
+<text x="407" y="490" class="code">HandClient</text>
+<text x="407" y="522" class="code">sdk.hand(side)</text>
+<text x="407" y="555" class="body">左手 / 右手，各 22 关节</text>
+<rect x="730" y="420" width="325" height="160" rx="12" fill="#eff6ff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="752" y="456" class="heading">躯干</text>
+<text x="752" y="490" class="code">TorsoClient</text>
+<text x="752" y="522" class="code">sdk.torso()</text>
+<text x="752" y="555" class="body">身体与颈部，共 8 关节</text>
+<rect x="1075" y="420" width="325" height="160" rx="12" fill="#eff6ff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="1097" y="456" class="heading">底盘</text>
+<text x="1097" y="490" class="code">ChassisClient</text>
+<text x="1097" y="522" class="code">sdk.chassis()</text>
+<text x="1097" y="555" class="body">底盘状态与运动控制</text>
+<text x="40" y="630" class="label">数据与服务</text>
+<rect x="40" y="650" width="260" height="160" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="62" y="686" class="heading">传感器</text>
+<text x="62" y="720" class="code">SensorClient</text>
+<text x="62" y="752" class="code">sdk.sensors()</text>
+<text x="62" y="785" class="body">IMU / 超声等传感数据</text>
+<rect x="315" y="650" width="260" height="160" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="337" y="686" class="heading">电源</text>
+<text x="337" y="720" class="code">PowerClient</text>
+<text x="337" y="752" class="code">sdk.power()</text>
+<text x="337" y="785" class="body">电池与电源状态</text>
+<rect x="590" y="650" width="260" height="160" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="612" y="686" class="heading">视频</text>
+<text x="612" y="720" class="code">VideoClient</text>
+<text x="612" y="752" class="code">sdk.video()</text>
+<text x="612" y="785" class="body">相机视频流</text>
+<rect x="865" y="650" width="260" height="160" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="887" y="686" class="heading">时间对齐</text>
+<text x="887" y="720" class="code">AlignmentClient</text>
+<text x="887" y="752" class="code">sdk.alignment()</text>
+<text x="887" y="785" class="body">多源数据时间匹配</text>
+<rect x="1140" y="650" width="260" height="160" rx="12" fill="#fff" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="1162" y="686" class="heading">用户配置</text>
+<text x="1162" y="720" class="code">ConfigClient</text>
+<text x="1162" y="752" class="code">sdk.config()</text>
+<text x="1162" y="785" class="body">读取与修改用户配置</text>
+<text x="40" y="867" class="body">side 按机器人自身左右选择；图中使用 C++ 访问器名称。</text>
+<text x="40" y="902" class="body">各 Client 均由 NorthSDK 直接获取；图中按用途分组。</text></svg>

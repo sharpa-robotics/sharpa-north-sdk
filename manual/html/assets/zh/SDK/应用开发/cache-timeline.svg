@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="895" viewBox="0 0 1200 895" role="img" aria-labelledby="title description">
+<title id="title">订阅、缓存与数据新鲜度</title>
+<desc id="description">时间向下：首次读取无样本时失败；收到状态后可读取新鲜副本；超过最大接收年龄后读取失败。</desc>
+<defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+              <marker id="muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+            </defs>
+            <style>
+              text{font-family:"Noto Sans CJK SC",Arial,sans-serif;fill:#1e293b}
+              .title{font-size:30px;font-weight:700}.heading{font-size:24px;font-weight:700}
+              .body{font-size:22px}.small{font-size:19px}.code{font-family:"DejaVu Sans Mono","Noto Sans CJK SC",monospace;font-size:20px}
+              .muted{fill:#475569}.blue{fill:#1d4ed8}.green{fill:#047857}.red{fill:#b91c1c}
+            </style>
+<rect width="1200" height="895" rx="16" fill="#f8fafc"/>
+<text x="36" y="53" class="title" text-anchor="start">订阅、缓存与数据新鲜度</text>
+<rect x="45" y="84" width="290" height="55" rx="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="190" y="121" class="heading" text-anchor="middle">应用</text>
+<line x1="190" y1="139" x2="190" y2="798" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7 7"/>
+<rect x="455" y="84" width="290" height="55" rx="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="600" y="121" class="heading" text-anchor="middle">SDK 状态缓存</text>
+<line x1="600" y1="139" x2="600" y2="798" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7 7"/>
+<rect x="865" y="84" width="290" height="55" rx="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="1010" y="121" class="heading" text-anchor="middle">机器人状态流</text>
+<line x1="1010" y1="139" x2="1010" y2="798" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7 7"/>
+<text x="395" y="187" class="code" text-anchor="middle">latest_state(max_age)</text>
+<line x1="190" y1="201" x2="600" y2="201" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="395" y="242" class="body red" text-anchor="middle">尚无样本 → kStaleState</text>
+<line x1="600" y1="258" x2="190" y2="258" stroke="#64748b" stroke-width="2.5" marker-end="url(#muted-arrow)" stroke-dasharray="7 6"/>
+<text x="805" y="313" class="body" text-anchor="middle">收到一个状态样本</text>
+<line x1="1010" y1="331" x2="600" y2="331" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="470" y="351" width="260" height="77" rx="12" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1.5"/>
+<text x="600" y="380" class="small green" text-anchor="middle">保存样本与接收时刻</text>
+<text x="600" y="409" class="code green" text-anchor="middle">t_receive</text>
+<text x="395" y="463" class="code" text-anchor="middle">latest_state(500 ms)</text>
+<line x1="190" y1="480" x2="600" y2="480" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="395" y="524" class="body green" text-anchor="middle">接收年龄 250 ms → 返回副本</text>
+<line x1="600" y1="540" x2="190" y2="540" stroke="#64748b" stroke-width="2.5" marker-end="url(#muted-arrow)" stroke-dasharray="7 6"/>
+<rect x="757" y="577" width="400" height="53" rx="12" fill="#fff7ed" stroke="#fed7aa" stroke-width="1.5"/>
+<text x="957" y="611" class="small" text-anchor="middle">一段时间内没有新样本</text>
+<text x="395" y="672" class="code" text-anchor="middle">latest_state(500 ms)</text>
+<line x1="190" y1="689" x2="600" y2="689" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="395" y="731" class="body red" text-anchor="middle">接收年龄 700 ms → kStaleState</text>
+<line x1="600" y1="748" x2="190" y2="748" stroke="#64748b" stroke-width="2.5" marker-end="url(#muted-arrow)" stroke-dasharray="7 6"/>
+<text x="36" y="839" class="small muted" text-anchor="start">年龄 = 本机当前时刻 − 接收时刻；latest_* 读取本地缓存。</text>
+</svg>

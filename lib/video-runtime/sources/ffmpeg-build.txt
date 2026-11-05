@@ -1,0 +1,4 @@
+url=https://ffmpeg.org/releases/ffmpeg-4.4.8.tar.xz
+sha256=c73848c4ae283d9eaee7be3b276affbc3543380483555500d0dd2c9b7e1c39c3
+configure --prefix=/home/hesai/north_ws/northsdk/build/release-x86_64/ffmpeg-lgpl --enable-shared --disable-static --enable-pic --disable-programs --disable-doc --disable-debug --disable-autodetect --disable-gpl --disable-nonfree --disable-version3 --disable-network --disable-everything --disable-avdevice --disable-vulkan --enable-decoder=h264\,hevc --enable-parser=h264\,hevc
+cc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0

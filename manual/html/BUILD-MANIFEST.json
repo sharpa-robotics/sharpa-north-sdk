@@ -1,0 +1,16 @@
+{
+  "source_sha256": {
+    "manual/zh/SDK/SDK 概览.md": "2907635f067acc5a7b93c35d075a44aad968ea0f04e9bbce551c7b89a5ae7e8c",
+    "manual/zh/SDK/应用开发.md": "027f0db9d5ca97a4977057fc3aa4f0329a15762e0a7a6c31fe02811704e2ec8f",
+    "manual/zh/SDK/软件服务接口.md": "fdc08ca30dfcc657fabc92f621b7e453230b5801e5964721447674c0dab4412a",
+    "manual/zh/SDK/例程参考.md": "a4a8cc74df0ffb5ee3d3acdc9f8b2486120f5e1b513682d0a004c2ee4bb5fc2a",
+    "manual/en/SDK/SDK Overview.md": "cb91110f8e88b0dc6745b6610f4db22995c9c8b5e273f9964b969ecd1a0633ea",
+    "manual/en/SDK/Application Development.md": "07b2520a922a07dbc63f9f591e555044aac4864f07066c0117c34242cdb14683",
+    "manual/en/SDK/Software Service Interface.md": "9fe2d5d7cf4e8bbf9c5c94a77fc5ab3dd96551de0d85fddf8ce900b4a4ec602e",
+    "manual/en/SDK/Example Code Reference.md": "861d254feab4b9df5f19d7ba339409c962fc5c34a44130dd40f59f9945e21da6"
+  },
+  "formats": [
+    "html",
+    "pdf"
+  ]
+}

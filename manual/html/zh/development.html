@@ -1,0 +1,2209 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sharpa North SDK 用户手册 / User Manual">
+      
+      
+      
+      
+        <link rel="prev" href="overview.html">
+      
+      
+        <link rel="next" href="api.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>应用开发 - North SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/manual.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#应用开发" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../index.html" title="North SDK" class="md-header__button md-logo" aria-label="North SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            North SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              应用开发
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="North SDK" class="md-nav__button md-logo" aria-label="North SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    North SDK
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页 / Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中文
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    中文
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK 概览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用开发
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="development.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#安装包与运行环境" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装包与运行环境
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#快速开始" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速开始
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速开始">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-连接机器人" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 连接机器人
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-设置-sdk-和机器人地址" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 设置 SDK 和机器人地址
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-运行只读诊断" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 运行只读诊断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-接收左臂状态" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 接收左臂状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-用户" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python 用户
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#编译-c-示例可选" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编译 C++ 示例（可选）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#完成标准" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完成标准
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#首次运行排查" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        首次运行排查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="首次运行排查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#安装包或版本" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装包或版本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#动态库" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态库
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#网络" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#时间同步" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时间同步
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#视频环境准备" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视频环境准备
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="视频环境准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-驱动与随包运行库" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVIDIA 驱动与随包运行库
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#检查视频环境" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        检查视频环境
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#接收第一路视频" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接收第一路视频
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#订阅和缓存" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        订阅和缓存
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#服务结果" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        服务结果
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#运动控制" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运动控制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运动控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#任务准备与结束" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务准备与结束
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#关节数组与坐标" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关节数组与坐标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#运动保护与轨迹处理" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运动保护与轨迹处理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运动保护与轨迹处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#命令准入与异常保护" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命令准入与异常保护
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#位置范围与速度约束" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        位置范围与速度约束
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="位置范围与速度约束">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#机械臂" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机械臂
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#躯干与手部" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        躯干与手部
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#底盘" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        底盘
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#连续位置命令的平滑处理" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续位置命令的平滑处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#关闭与重连" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关闭与重连
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#故障定位" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        故障定位
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件服务接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    例程参考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../en/overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../en/development.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../en/api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Service Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../en/examples.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Code Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#安装包与运行环境" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装包与运行环境
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#快速开始" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        快速开始
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="快速开始">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-连接机器人" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. 连接机器人
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-设置-sdk-和机器人地址" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 设置 SDK 和机器人地址
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-运行只读诊断" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. 运行只读诊断
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-接收左臂状态" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. 接收左臂状态
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-用户" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python 用户
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#编译-c-示例可选" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        编译 C++ 示例（可选）
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#完成标准" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        完成标准
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#首次运行排查" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        首次运行排查
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="首次运行排查">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#安装包或版本" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安装包或版本
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#动态库" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        动态库
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#网络" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        网络
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#时间同步" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        时间同步
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#视频环境准备" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        视频环境准备
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="视频环境准备">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-驱动与随包运行库" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVIDIA 驱动与随包运行库
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#检查视频环境" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        检查视频环境
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#接收第一路视频" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        接收第一路视频
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#订阅和缓存" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        订阅和缓存
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#服务结果" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        服务结果
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#运动控制" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运动控制
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运动控制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#任务准备与结束" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        任务准备与结束
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#关节数组与坐标" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关节数组与坐标
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#运动保护与轨迹处理" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        运动保护与轨迹处理
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="运动保护与轨迹处理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#命令准入与异常保护" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        命令准入与异常保护
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#位置范围与速度约束" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        位置范围与速度约束
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="位置范围与速度约束">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#机械臂" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        机械臂
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#躯干与手部" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        躯干与手部
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#底盘" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        底盘
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#连续位置命令的平滑处理" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        连续位置命令的平滑处理
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#关闭与重连" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        关闭与重连
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#故障定位" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        故障定位
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="应用开发">应用开发<a class="headerlink" href="#应用开发" title="Permanent link">&para;</a></h1>
+<div class="manual-language"><a href="../en/development.html">English</a></div>
+
+<h2 id="安装包与运行环境">安装包与运行环境<a class="headerlink" href="#安装包与运行环境" title="Permanent link">&para;</a></h2>
+<p>安装包包含 C++ 头文件与动态库、Python 绑定、示例程序和视频运行依赖。本手册推荐使用以下开发环境。</p>
+<table>
+<thead>
+<tr>
+<th>开发机系统</th>
+<th>推荐 Python 解释器</th>
+<th>C++ 接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ubuntu 22.04 LTS x86_64</td>
+<td>CPython 3.10.x</td>
+<td>C++17</td>
+</tr>
+<tr>
+<td>Ubuntu 24.04 LTS x86_64</td>
+<td>CPython 3.12.x</td>
+<td>C++17</td>
+</tr>
+</tbody>
+</table>
+<p>其他 Linux x86_64 环境需满足安装包 <code>BUILD-MANIFEST.json</code> 中记录的最低运行库符号要求，兼容性以实际验证为准。</p>
+<p>Python 解释器由开发机环境提供，其次版本及架构必须与包内实际提供的绑定匹配，具体以安装包清单为准；虚拟环境同样适用。仅使用 C++ 时无需 Python。</p>
+<p>将安装包完整解压到独立目录，保留目录结构。安装包携带 GStreamer 运行库和所需视频插件，无需额外安装系统 GStreamer；NVIDIA 驱动不随包提供，要求见<a href="#%E8%A7%86%E9%A2%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">视频环境准备</a>。</p>
+<table>
+<thead>
+<tr>
+<th>目录或文件</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>include/north_sdk/</code></td>
+<td>C++ 公共头文件</td>
+</tr>
+<tr>
+<td><code>lib/</code></td>
+<td>SDK 及配套运行库</td>
+</tr>
+<tr>
+<td><code>lib/python/</code></td>
+<td>与目标 Python 版本匹配的绑定</td>
+</tr>
+<tr>
+<td><code>lib/video-runtime/</code></td>
+<td>随包视频运行库、插件及工具</td>
+</tr>
+<tr>
+<td><code>bin/</code></td>
+<td>C++ 入门与连接诊断程序</td>
+</tr>
+<tr>
+<td><code>examples/python/</code></td>
+<td>Python 示例与环境检查脚本</td>
+</tr>
+<tr>
+<td><code>manual/</code></td>
+<td>用户手册</td>
+</tr>
+<tr>
+<td><code>setup.bash</code></td>
+<td>加载当前包的库、Python 模块和视频插件路径</td>
+</tr>
+<tr>
+<td><code>BUILD-MANIFEST.json</code></td>
+<td>构建信息、Python ABI 和依赖清单</td>
+</tr>
+</tbody>
+</table>
+<p>更新 SDK 时替换完整安装包，重新加载环境，并重新验证导入、只读连接和状态接收。</p>
+<h2 id="快速开始">快速开始<a class="headerlink" href="#快速开始" title="Permanent link">&para;</a></h2>
+<p>本节目标是在不发送运动、模式、标定或供电命令的前提下，用最少步骤完成机器人连接和第一路状态接收。</p>
+<blockquote>
+<p><strong>安全说明：</strong> 第一次连接只运行本节的只读程序。不要调用 <code>send_*()</code>、<code>set_mode()</code>、<code>enable()</code>、<code>reset()</code>、标定或 Power 管理接口。</p>
+</blockquote>
+<h3 id="1-连接机器人">1. 连接机器人<a class="headerlink" href="#1-连接机器人" title="Permanent link">&para;</a></h3>
+<p>将开发机连接到机器人背部右侧交换机引出的以太网口，接通机器人电源并等待机器人软件启动。状态通信和时间同步均使用此有线连接。</p>
+<p>默认机器人 IP 为 <code>192.168.100.100</code>，SDK 通过 UDP 端口 <code>7449</code> 通信。直连时，可在 Ubuntu 的“设置 → 网络 → 有线 → IPv4”中选择“手动”，例如将开发机设为 <code>192.168.100.10</code>、子网掩码设为 <code>255.255.255.0</code>，网关和 DNS 留空。确认该地址未被其他设备使用；现场修改过网段时，按实际地址配置。</p>
+<h3 id="2-设置-sdk-和机器人地址">2. 设置 SDK 和机器人地址<a class="headerlink" href="#2-设置-sdk-和机器人地址" title="Permanent link">&para;</a></h3>
+<p>将下面的安装目录替换为实际解压路径。默认机器人地址可直接使用；现场地址如有变更再调整。</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">NORTHSDK_PREFIX</span><span class="o">=</span>/absolute/path/to/north-sdk
+<span class="nb">export</span><span class="w"> </span><span class="nv">NORTHSDK_ENDPOINT</span><span class="o">=</span>udp/192.168.100.100:7449
+<span class="nb">source</span><span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/setup.bash"</span>
+</code></pre></div>
+<p>环境变量只对当前终端及其启动的程序生效；新终端需重新设置。</p>
+<p><code>NORTHSDK_PREFIX</code> 指向解压后的 SDK 根目录，其中包含 <code>setup.bash</code>。</p>
+<p>首次使用自动对时时，在普通开发账号的终端执行一次主机准备：</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/tools/setup-host"</span><span class="w"> </span>--user<span class="w"> </span><span class="s2">"</span><span class="nv">$USER</span><span class="s2">"</span>
+<span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/tools/setup-host"</span><span class="w"> </span>check
+</code></pre></div>
+<p>该命令安装主机对时组件并授权当前账号。后续程序无需 <code>sudo</code>；更新 SDK 时用新包重新执行。软件对时可能使系统时间跳变，并临时暂停系统授时服务；最后一个对时会话关闭后恢复原服务状态。关闭对时的方法见<a href="#%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>。</p>
+<h3 id="3-运行只读诊断">3. 运行只读诊断<a class="headerlink" href="#3-运行只读诊断" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/bin/north_sdk_robot_smoke"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--endpoint<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span><span class="w"> </span>--seconds<span class="w"> </span><span class="m">5</span>
+</code></pre></div>
+<p>基础连接正常时，最后一行输出：</p>
+<div class="highlight"><pre><span></span><code>PASS
+</code></pre></div>
+<p><code>PASS</code> 表示已收到 Master 状态、硬件健康和至少一路心跳。按实际配置逐项检查所需设备流，<code>silent</code> 表示该流未收到样本。</p>
+<h3 id="4-接收左臂状态">4. 接收左臂状态<a class="headerlink" href="#4-接收左臂状态" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/bin/north_sdk_quickstart"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span>
+</code></pre></div>
+<p>左臂在线并持续发布时会看到类似输出：</p>
+<div class="highlight"><pre><span></span><code>left arm seq=1234 joints=7
+</code></pre></div>
+<p>按 Ctrl+C 退出。如果机器人没有配置左臂，以 <code>robot_smoke</code> 中实际安装设备的数据流为准。</p>
+<h3 id="python-用户">Python 用户<a class="headerlink" href="#python-用户" title="Permanent link">&para;</a></h3>
+<p>先运行 <code>python3 --version</code>，确认解释器次版本与包内绑定匹配。Ubuntu 22.04 推荐 CPython 3.10.x，Ubuntu 24.04 推荐 CPython 3.12.x；虚拟环境也须使用包内支持的解释器次版本。</p>
+<p>步骤 2 已设置 Python 模块路径，直接运行示例：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/examples/python/quickstart.py"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--endpoint<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span>
+</code></pre></div>
+<h3 id="编译-c-示例可选">编译 C++ 示例（可选）<a class="headerlink" href="#编译-c-示例可选" title="Permanent link">&para;</a></h3>
+<p>预编译程序运行成功后，如果需要验证 C++ 开发环境，可使用一条 <code>g++</code> 命令：</p>
+<div class="highlight"><pre><span></span><code>g++<span class="w"> </span>-std<span class="o">=</span>c++17<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/examples/cpp/quickstart.cpp"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-I<span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/include"</span><span class="w"> </span>-L<span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/lib"</span><span class="w"> </span>-lnorth_sdk<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-Wl,-rpath,<span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/lib"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>north_sdk_quickstart
+
+./north_sdk_quickstart<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span>
+</code></pre></div>
+<p><code>-L</code> 用于链接时查找库，<code>-Wl,-rpath</code> 记录 SDK 库目录；运行前仍需加载 <code>setup.bash</code>，以使用随包视频运行库和插件。安装目录迁移后应重新编译或更新运行时库路径。</p>
+<h3 id="完成标准">完成标准<a class="headerlink" href="#完成标准" title="Permanent link">&para;</a></h3>
+<p>满足以下条件即可认为只读入门完成：</p>
+<ul>
+<li><code>robot_smoke</code> 输出 <code>PASS</code>；</li>
+<li>需要使用的设备流持续收到样本；</li>
+<li>C++ 或 Python 示例可以正常退出；</li>
+</ul>
+<p>完成后继续阅读本章的订阅和运动控制说明，按任务选择<a href="examples.html">例程参考</a>。首次连接失败时，查看下面的<a href="#%E9%A6%96%E6%AC%A1%E8%BF%90%E8%A1%8C%E6%8E%92%E6%9F%A5">首次运行排查</a>。</p>
+<h3 id="首次运行排查">首次运行排查<a class="headerlink" href="#首次运行排查" title="Permanent link">&para;</a></h3>
+<p>首次连接、启动或 Python 导入失败时，按安装包、动态库和网络依次排查。以下检查沿用步骤 2 的环境变量，只在出现问题时执行。</p>
+<h4 id="安装包或版本">安装包或版本<a class="headerlink" href="#安装包或版本" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nb">test</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/include/north_sdk/NorthSDK.h"</span>
+<span class="nb">test</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/lib/libnorth_sdk.so"</span>
+cat<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/Version"</span>
+</code></pre></div>
+<p>Python 导入检查：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import north_sdk; print(north_sdk.NorthSDK.version())"</span>
+</code></pre></div>
+<p>若提示 <code>No module named 'north_sdk._north_sdk'</code>，先检查扩展是否存在及 Python 版本是否匹配：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>--version
+ls<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">"</span>/lib/python/north_sdk/_north_sdk*.so
+</code></pre></div>
+<p>检查安装包清单和 <code>lib/python/north_sdk/</code> 中实际提供的扩展。文件名中的 <code>cpython-312</code> 表示需要 CPython 3.12。解释器不匹配时切换到对应版本，或获取包含所需绑定的安装包；清单中列出的扩展缺失时重新获取完整包。</p>
+<h4 id="动态库">动态库<a class="headerlink" href="#动态库" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>ldd<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/bin/north_sdk_quickstart"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'north_sdk|zenoh|protobuf|not found'</span>
+</code></pre></div>
+<p>North SDK、Zenoh 和 Protobuf 应来自同一安装包。若出现 <code>not found</code> 或指向其他 SDK/ROS 环境，先修正 <code>LD_LIBRARY_PATH</code>。</p>
+<h4 id="网络">网络<a class="headerlink" href="#网络" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>route<span class="w"> </span>get<span class="w"> </span><span class="m">192</span>.168.100.100
+</code></pre></div>
+<p>将 IP 替换为机器人实际地址，确认路由使用预期网卡。现场允许 ICMP 时可再执行 <code>ping</code>；Ping 失败不一定表示 Zenoh 不可用，最终以 <code>robot_smoke</code> 为准。</p>
+<h2 id="时间同步">时间同步<a class="headerlink" href="#时间同步" title="Permanent link">&para;</a></h2>
+<p>SDK 默认在建立通信连接后准备 gPTP 对时。首次使用前完成<a href="#2-%E8%AE%BE%E7%BD%AE-sdk-%E5%92%8C%E6%9C%BA%E5%99%A8%E4%BA%BA%E5%9C%B0%E5%9D%80">主机准备</a>。</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>软件模式（默认）</td>
+<td>调整开发机系统时间，网卡需支持软件收发时间戳。</td>
+</tr>
+<tr>
+<td>硬件模式</td>
+<td>创建 SDK 前将 <code>config.time_sync.mode</code> 设为 <code>TimeSyncMode::kHardware</code>（C++）或 <code>TimeSyncMode.HARDWARE</code>（Python）。需支持硬件时间戳和 PHC 的网卡，只调整网卡时钟。</td>
+</tr>
+<tr>
+<td>关闭对时</td>
+<td>创建 SDK 前设置 <code>config.time_sync.enabled = false</code>（C++）或 <code>False</code>（Python）。</td>
+</tr>
+</tbody>
+</table>
+<p>运行以下命令检查对时：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/examples/python/time_sync_status.py"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--endpoint<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span><span class="w"> </span>--mode<span class="w"> </span>software<span class="w"> </span>--seconds<span class="w"> </span><span class="m">10</span>
+</code></pre></div>
+<p>输出中的 <code>state</code> 为 <code>READY</code> 且有 <code>robot_time_ns</code> 时，可通过 <code>sdk.robot_time_ns()</code> 读取同步时间。机器人使用 gPTP 时间域，不保证与 UTC 相同。</p>
+<p>对时失败时，<code>connect()</code> 默认返回错误但保留通信连接；用 <code>time_sync_diagnostics()</code> 查看原因。需要继续使用连接时，按上述脚本处理错误。运行中失锁后，依赖同步时间的计算应等待重新就绪。</p>
+<p>只验证通信时，可给 <code>north_sdk_robot_smoke</code> 添加 <code>--no-time-sync</code>。完整配置和诊断字段见<a href="api.html#%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5%E5%8F%82%E6%95%B0">时间同步参数</a>。</p>
+<h2 id="视频环境准备">视频环境准备<a class="headerlink" href="#视频环境准备" title="Permanent link">&para;</a></h2>
+<p>需要使用视频时完成本节。先按“快速开始”加载安装包环境；GStreamer 运行库、解析/转换/JPEG 插件、NVIDIA 解码插件及精简 H.264/H.265 软件解码依赖均随包提供，无需安装系统 GStreamer。</p>
+<h3 id="nvidia-驱动与随包运行库">NVIDIA 驱动与随包运行库<a class="headerlink" href="#nvidia-驱动与随包运行库" title="Permanent link">&para;</a></h3>
+<p>默认使用 NVIDIA NVDEC 硬解，要求独显支持相机使用的 H.264/H.265 编码规格，并安装与 GPU 和 Ubuntu 版本匹配的 NVIDIA 驱动及解码运行库。驱动需单独安装。</p>
+<p>先检查驱动：</p>
+<div class="highlight"><pre><span></span><code>nvidia-smi<span class="w"> </span>-L
+</code></pre></div>
+<p>无法列出 GPU 时，按 <a href="https://ubuntu.com/server/docs/nvidia-drivers-installation/">Ubuntu 官方驱动安装说明</a>安装或修复驱动。NVDEC 使用驱动配套的 <code>libcuda.so.1</code> 和 <code>libnvcuvid.so.1</code>。GPU 对输入编码规格的支持可查询 <a href="https://developer.nvidia.com/video-encode-decode-support-matrix">NVIDIA 官方解码支持表</a>。</p>
+<p><code>setup.bash</code> 设置 SDK 视频运行库、插件和缓存路径。新终端或应用启动环境中都要加载此脚本，视频程序使用当前 SDK 提供的运行库和插件。如果应用已加载其他 GStreamer 运行库，将视频接收放在独立进程中。</p>
+<p>随包的软件解码用于兼容性和功能调试；没有 NVIDIA GPU 时可显式选择软件后端，不需要驱动。软件解码性能较差，多路或高分辨率场景可能严重降帧并增加时延，不建议用于实时任务；SDK 不会从硬解自动回退到软解。</p>
+<h3 id="检查视频环境">检查视频环境<a class="headerlink" href="#检查视频环境" title="Permanent link">&para;</a></h3>
+<p>在运行视频示例的同一终端执行，默认检查 NVIDIA 硬解：</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/examples/python/check_video_env.py"</span><span class="w"> </span>--backend<span class="w"> </span>nvdec
+</code></pre></div>
+<p>脚本检查本机 SDK 加载、GStreamer、视频插件及 GPU/驱动依赖，C++ 用户也可运行。每项 <code>OK</code> 且最终 <code>PASS</code> 表示依赖检查通过，再通过接收视频验证解码。出现 <code>FAIL</code> 时检查当前包环境、库和插件是否完整，以及驱动是否正常。</p>
+<p>检查软件解码环境时，给脚本传入 <code>--backend software</code>。采集或预览程序的解码后端需分别指定，见下一步及<a href="examples.html#%E8%AE%A2%E9%98%85%E5%A4%B4%E9%83%A8-jpeg">例程参考</a>。</p>
+<h3 id="接收第一路视频">接收第一路视频<a class="headerlink" href="#接收第一路视频" title="Permanent link">&para;</a></h3>
+<p>依赖检查通过且机器人头部左目在线后，运行单路只读采集，持续 5 秒且不保存图片：</p>
+<div class="highlight"><pre><span></span><code><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/bin/north_sdk_video_jpeg"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span><span class="w"> </span>--no-save<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">85</span><span class="w"> </span>--seconds<span class="o">=</span><span class="m">5</span><span class="w"> </span>--nvdec
+</code></pre></div>
+<p><code>0</code> 选择头部左目，<code>85</code> 为 JPEG 质量。结束时检查 JPEG 数量大于 0、无订阅或解码错误；没有 JPEG 时检查相机发布、网络及解码条件。需要软件解码时将 <code>--nvdec</code> 改为 <code>--software</code>，并先通过对应的环境检查。</p>
+<p>需要浏览器预览时，使用<a href="examples.html#%E8%AE%A2%E9%98%85%E5%A4%B4%E9%83%A8-jpeg">例程参考</a>中的预览脚本；接口参数、视频来源和诊断字段见 <a href="api.html#videoclient">VideoClient</a>。</p>
+<h2 id="订阅和缓存">订阅和缓存<a class="headerlink" href="#订阅和缓存" title="Permanent link">&para;</a></h2>
+<p>保存 <code>on_*()</code> 返回的 Subscription，句柄析构或 <code>close()</code> 会取消订阅。C++ 回调参数为借用引用，需要在回调后使用的数据应复制。回调保持短小，将耗时计算和阻塞操作交给应用自己的工作线程。</p>
+<p><code>latest_*(max_age)</code> 返回本地缓存副本，最大年龄从本机接收样本时计算。首次调用可能尚无数据，也可能返回 <code>kStaleState</code>；应等待新样本。</p>
+<table>
+<thead>
+<tr>
+<th>回调策略</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kDropOldest</code></td>
+<td>默认；队列满时丢弃最老的可丢回调</td>
+</tr>
+<tr>
+<td><code>kLatestOnly</code></td>
+<td>合并同一订阅的待执行样本，适合状态显示</td>
+</tr>
+<tr>
+<td><code>kReliable</code></td>
+<td>本地不主动丢弃，队满施加背压</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="首次无数据、有效缓存与缓存过期的时序" src="../assets/zh/SDK/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/cache-timeline.svg" /></p>
+<p>图中以 <code>max_age=500 ms</code> 为例，250 ms 与 700 ms 表示样本的本机接收年龄。<code>latest_*</code> 会建立所需的状态接收，不要求先调用 <code>on_*</code>；如另行订阅 <code>on_*</code>，还会收到对应回调。</p>
+<h2 id="服务结果">服务结果<a class="headerlink" href="#服务结果" title="Permanent link">&para;</a></h2>
+<p>先检查 SDK 调用结果，再检查机器人服务响应中的业务结果；持续运行时订阅心跳和错误事件。C++ 使用 <code>Result&lt;T&gt;</code> / <code>Status</code>，Python 捕获 <code>NorthSDKError</code>；具体字段和处理方式见<a href="api.html#%E9%94%99%E8%AF%AF%E4%B8%8E%E7%BB%93%E6%9E%9C%E6%A3%80%E6%9F%A5">错误与结果检查</a>。</p>
+<h2 id="运动控制">运动控制<a class="headerlink" href="#运动控制" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>实机运动不是首次连接测试。</strong> SDK 的本地校验和 Master 门禁不能替代硬件急停、机型限位、现场风险评估或机器人端安全控制器。</p>
+</blockquote>
+<p>发送第一条运动命令前，至少完成以下检查：</p>
+<ul>
+<li>急停装置已验证且操作员可立即触达，机器人周围已清场并按机型要求固定或支撑；</li>
+<li>已取得当前机型的关节名称、数组顺序、正方向、零位、软硬限位及建议速度/加速度；</li>
+<li>先读取新鲜反馈，按机型限位从当前位置生成小幅目标；</li>
+<li>已确认任务 ID、CommandChannel、Master mode、设备使能和控制模式的组合由机器人交付配置支持；</li>
+<li>控制循环在反馈过期、状态退出 RUNNING、SDK 错误或业务拒绝时立即停止继续发送；</li>
+<li>已准备经审核的停止任务、急停及故障恢复步骤，并由现场监护人员确认可以开始。</li>
+</ul>
+<p>机器人端的保护行为、限位数值和插值参数见<a href="#%E8%BF%90%E5%8A%A8%E4%BF%9D%E6%8A%A4%E4%B8%8E%E8%BD%A8%E8%BF%B9%E5%A4%84%E7%90%86">运动保护与轨迹处理</a>。</p>
+<p>运动命令要求 Master 状态新鲜且为 RUNNING。通道与运行模式的对应关系如下，准备顺序见<a href="#%E4%BB%BB%E5%8A%A1%E5%87%86%E5%A4%87%E4%B8%8E%E7%BB%93%E6%9D%9F">任务准备与结束</a>。</p>
+<table>
+<thead>
+<tr>
+<th>通道</th>
+<th>Master 模式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kTeleoperation</code></td>
+<td><code>kTeleoperation</code></td>
+</tr>
+<tr>
+<td><code>kInference</code></td>
+<td><code>kInference</code></td>
+</tr>
+<tr>
+<td><code>kAutomation</code></td>
+<td><code>kAutomation</code></td>
+</tr>
+<tr>
+<td><code>kUniversal</code></td>
+<td>任意模式，仍要求新鲜 RUNNING</td>
+</tr>
+</tbody>
+</table>
+<p>每侧臂为 7、每侧手为 22、躯干为 8 个关节，位置单位为 rad，数组按固定设备顺序填写。<code>JointCommand</code> 只填写完整 <code>position</code>；<code>name</code>、<code>velocity</code> 和 <code>torque</code> 保持为空。发送成功表示命令提交成功，动作是否完成应通过新鲜设备反馈判断。</p>
+<p><img alt="命令提交成功与设备动作完成的区别" src="../assets/zh/SDK/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/motion-sequence.svg" /></p>
+<p>图示为单臂位置命令的调用顺序。运行条件不满足或目标参数无效时，SDK 返回错误。<code>kUniversal</code> 通道不检查模式匹配，但仍要求新鲜 RUNNING。</p>
+<h3 id="任务准备与结束">任务准备与结束<a class="headerlink" href="#任务准备与结束" title="Permanent link">&para;</a></h3>
+<p>以下以 <code>inference</code> 任务发送位置目标为例。</p>
+<ol>
+<li>
+<p><strong>配置通道。</strong> 创建 SDK 前设置 <code>config.command_channel = north::CommandChannel::kInference</code>（C++）或 <code>config.command_channel = CommandChannel.INFERENCE</code>（Python）。WholeBody 在每次 <code>send()</code> 时传入通道。</p>
+</li>
+<li>
+<p><strong>确认空闲。</strong> 读取新鲜 Master 状态，确认 <code>STANDBY</code>，检查所需设备健康，并确认其他控制端已停止发送命令。已有任务运行时，先按该任务的结束流程处理。</p>
+</li>
+<li>
+<p><strong>准备设备。</strong> 调用 <code>master().set_mode()</code>，传入 <code>OperationMode::kInference</code> / <code>OperationMode.INFERENCE</code>。待控制臂选择 <code>ControlMode::kJointPosition</code> / <code>ControlMode.JOINT_POSITION</code> 并调用 <code>enable()</code>；躯干选择 <code>TorsoControlMode::kPosition</code> / <code>TorsoControlMode.POSITION</code> 并使能；手选择 <code>HandMode::kPosition</code> / <code>HandMode.POSITION</code>。逐项检查服务结果和设备反馈。</p>
+</li>
+<li>
+<p><strong>启动任务。</strong> 调用 <code>master().start_task("inference")</code>，检查 <code>MasterResult</code>，再等待状态流同时满足 <code>RUNNING</code>、<code>Inference</code> 和 <code>task_id == "inference"</code>。健康检查失败时先处理设备问题。</p>
+</li>
+<li>
+<p><strong>发送目标。</strong> 从新鲜位置反馈生成完整、小幅且连续的目标。发送期间持续检查任务 ID、Master 阶段/模式及设备反馈；目标数组顺序见下节。</p>
+</li>
+<li>
+<p><strong>正常结束。</strong> 停止控制循环；底盘先持续发送零速度并通过反馈确认停稳。调用 <code>master().stop_task()</code>，检查业务结果，等待状态离开 RUNNING、确认设备反馈后关闭 SDK。反馈或通信故障时使用现场停止流程。</p>
+</li>
+</ol>
+<p><code>start_task(task_id)</code> 接收区分大小写的任务 ID。标准配置中的客户任务如下，可用项以交付配置为准；未配置的 ID 会被拒绝。</p>
+<table>
+<thead>
+<tr>
+<th>任务 ID</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>inference</code></td>
+<td>推理控制任务，本节使用的任务。</td>
+</tr>
+<tr>
+<td><code>teleoperation</code></td>
+<td>遥操作任务，使用独立的遥操作准备流程。</td>
+</tr>
+<tr>
+<td><code>home</code></td>
+<td>回位任务，会主动产生运动。</td>
+</tr>
+<tr>
+<td><code>docking</code></td>
+<td>对接任务。</td>
+</tr>
+</tbody>
+</table>
+<p><code>teleoperation</code> 正常结束时会执行回位，并在回位和录制收尾结束后退出 RUNNING。<strong>停止遥操作任务可能继续产生运动，不能用作急停。</strong></p>
+<p>退出系统急停时，<code>master().exit_estop()</code> 会启动设备复位和重新使能流程，包括双臂、躯干及手部模式恢复。调用前清空运动命令并确认现场允许恢复；服务成功响应表示流程已开始。等待 Master 离开 ESTOP，再检查健康、控制模式和新鲜位置反馈后启动新的控制循环。</p>
+<h3 id="关节数组与坐标">关节数组与坐标<a class="headerlink" href="#关节数组与坐标" title="Permanent link">&para;</a></h3>
+<p>状态的 <code>joints.name[i]</code> 和 <code>joints.position[i]</code> 对应同一轴；命令也使用该固定下标，但发送时 <code>name</code> 留空。先打印当前设备完整状态，再与当前机型关节表核对。</p>
+<table>
+<thead>
+<tr>
+<th>部位</th>
+<th>数组下标</th>
+<th>状态名称</th>
+<th>对应关系</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每侧臂</td>
+<td>0–6</td>
+<td><code>joint_0</code>–<code>joint_6</code></td>
+<td>J1–J7；左右侧由 <code>Side</code> 选择。</td>
+</tr>
+<tr>
+<td>躯干</td>
+<td>0–4</td>
+<td><code>torso_0</code>–<code>torso_4</code></td>
+<td>身体 J1–J5，其中 J3/J4 为腰部俯仰/侧倾关节。</td>
+</tr>
+<tr>
+<td>颈部</td>
+<td>5–7</td>
+<td><code>torso_5</code>–<code>torso_7</code></td>
+<td>颈部 J6–J8，与身体一起组成完整 8 项命令。</td>
+</tr>
+<tr>
+<td>每侧手</td>
+<td>0–21</td>
+<td><code>joint_0</code>–<code>joint_21</code></td>
+<td>22 个关节。</td>
+</tr>
+</tbody>
+</table>
+<p>位置单位为 rad。各侧关节的零位、转轴正方向及手指关节分组按交付机型的关节定义使用。</p>
+<h2 id="运动保护与轨迹处理">运动保护与轨迹处理<a class="headerlink" href="#运动保护与轨迹处理" title="Permanent link">&para;</a></h2>
+<p>机器人对运动目标执行跳变检查、限位和插值处理。表中关节从 1 开始编号，SDK 数组从 0 开始索引。</p>
+<h3 id="命令准入与异常保护">命令准入与异常保护<a class="headerlink" href="#命令准入与异常保护" title="Permanent link">&para;</a></h3>
+<p>臂和躯干根据<strong>新目标与上一有效目标的差值</strong>处理连续位置命令：差值在直接接收阈值内且未处于追赶或恢复过程时，接收整帧；超过该阈值时限制推进量；超过 Hold 阈值时拒收整帧。符合下述新鲜反馈条件的轴可免于触发 Hold。</p>
+<table>
+<thead>
+<tr>
+<th>部位与检查空间</th>
+<th>直接接收阈值</th>
+<th>Hold 阈值</th>
+<th>追赶速率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每侧臂，J1–J7 关节角</td>
+<td>各轴 0.1745 rad</td>
+<td>J1–J4：0.3491 rad；J5–J7：0.5236 rad</td>
+<td>J1–J7：2.0944、2.0944、3.1416、3.1416、6.2832、6.2832、6.2832 rad/s</td>
+</tr>
+<tr>
+<td>躯干，8 个电机轴，按 ID 1–8 排列</td>
+<td>0.0349、0.0349、0.0698、0.0698、0.0698、0.0873、0.0873、0.0873 rad</td>
+<td>0.1047、0.1047、0.2094、0.2094、0.2094、0.2618、0.2618、0.2618 rad</td>
+<td>1.0472、1.0472、1.0472、1.0472、1.0472、1.5708、1.5708、1.5708 rad/s</td>
+</tr>
+</tbody>
+</table>
+<p>追赶时，所有轴按最严格轴的比例缩小增量，时间额度不超过 20 ms。追赶速率用于追赶和恢复阶段。</p>
+<p>反馈年龄不超过 50 ms、且目标与反馈差值在直接接收阈值内时，该轴可免于因相对旧目标的大跳变触发 Hold；位置命令仍受追赶约束。Hold 后须让各检查轴回到直接接收阈值内或接近上述新鲜反馈，才能恢复。<strong>Hold 保留上一有效目标，机构可能继续已有运动。</strong> 躯干阈值按电机轴计算。</p>
+<p>机器人还会检查实际反馈与硬件状态：</p>
+<table>
+<thead>
+<tr>
+<th>保护</th>
+<th>默认参数及行为</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>臂位置反馈越界</td>
+<td>超过本节位置范围再向外扩展 0.0262 rad的边界时触发保护；应用目标仍使用表中的位置范围。</td>
+</tr>
+<tr>
+<td>臂位置跟踪误差</td>
+<td>位置安全检查启用时，目标与反馈差超过 J1–J4 的 0.3491 rad、J5–J7 的 0.6982 rad 时触发故障保护。</td>
+</tr>
+<tr>
+<td>臂电机反馈与硬件故障</td>
+<td>反馈为非有限值、驱动故障或电机速度超过电机 1–3 的 8.3776 rad/s、电机 4–7 的 26.7035 rad/s 时触发故障保护。</td>
+</tr>
+<tr>
+<td>底盘命令超时</td>
+<td>100 ms 未收到有效运动命令后退出当前速度命令；是否停稳以速度反馈为准。</td>
+</tr>
+</tbody>
+</table>
+<p>发生故障后检查心跳错误和服务响应，再按恢复流程处理。默认未启用自碰撞检查，应用需规划避障。</p>
+<h3 id="位置范围与速度约束">位置范围与速度约束<a class="headerlink" href="#位置范围与速度约束" title="Permanent link">&para;</a></h3>
+<h4 id="机械臂">机械臂<a class="headerlink" href="#机械臂" title="Permanent link">&para;</a></h4>
+<p>位置目标按下表逐轴钳位。左右臂分别使用各自的关节坐标定义。</p>
+<table>
+<thead>
+<tr>
+<th>关节</th>
+<th>位置下限（rad）</th>
+<th>位置上限（rad）</th>
+<th>关节速度指令钳位（rad/s）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J1</td>
+<td>-1.6144</td>
+<td>4.2673</td>
+<td>8.3776</td>
+</tr>
+<tr>
+<td>J2</td>
+<td>-2.0944</td>
+<td>0.3491</td>
+<td>8.3776</td>
+</tr>
+<tr>
+<td>J3</td>
+<td>-1.2217</td>
+<td>4.3633</td>
+<td>8.3776</td>
+</tr>
+<tr>
+<td>J4</td>
+<td>-0.1745</td>
+<td>2.2689</td>
+<td>11.4605</td>
+</tr>
+<tr>
+<td>J5</td>
+<td>-1.5708</td>
+<td>2.6180</td>
+<td>22.9210</td>
+</tr>
+<tr>
+<td>J6</td>
+<td>-1.0472</td>
+<td>1.5708</td>
+<td>26.7035</td>
+</tr>
+<tr>
+<td>J7</td>
+<td>-0.8727</td>
+<td>0.8727</td>
+<td>26.7035</td>
+</tr>
+</tbody>
+</table>
+<p>速度列为关节速度指令上限。应用按任务规划运行速度；SDK Arm 接口接收位置目标，实际运动还受电机限制和机构姿态影响。</p>
+<h4 id="躯干与手部">躯干与手部<a class="headerlink" href="#躯干与手部" title="Permanent link">&para;</a></h4>
+<p>躯干位置目标按 SDK 固定关节顺序钳位：</p>
+<table>
+<thead>
+<tr>
+<th>关节</th>
+<th>J1</th>
+<th>J2</th>
+<th>J3</th>
+<th>J4</th>
+<th>J5</th>
+<th>J6</th>
+<th>J7</th>
+<th>J8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>下限（rad）</td>
+<td>0</td>
+<td>-2.4435</td>
+<td>-0.5236</td>
+<td>-0.5236</td>
+<td>-3.1416</td>
+<td>-1.5708</td>
+<td>-0.5236</td>
+<td>-0.5236</td>
+</tr>
+<tr>
+<td>上限（rad）</td>
+<td>1.4835</td>
+<td>0</td>
+<td>2.0944</td>
+<td>0.5236</td>
+<td>3.1416</td>
+<td>1.5708</td>
+<td>0.5236</td>
+<td>0.8727</td>
+</tr>
+</tbody>
+</table>
+<p>关节名称和示意图见 <a href="api.html#torsoclient">TorsoClient</a>。并联腰部的组合姿态还需满足机构和电机范围约束。</p>
+<p>手部限位以交付机型的关节表为准。默认速度系数为 0.5、电流系数为 0.6，均为无量纲系数。</p>
+<h4 id="底盘">底盘<a class="headerlink" href="#底盘" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vx</code> / <code>vy</code> 加速度限制</td>
+<td>各 10 m/s²</td>
+<td>分别限制机体系 x、y 方向的加速度。</td>
+</tr>
+<tr>
+<td><code>vtheta</code> 角加速度限制</td>
+<td>10 rad/s²</td>
+<td>偏航速度变化率。</td>
+</tr>
+<tr>
+<td><code>extension_velocity</code> 加速度限制</td>
+<td>0.5 m/s²</td>
+<td>伸缩轴速度变化率。</td>
+</tr>
+<tr>
+<td>伸缩速度</td>
+<td>0.05 m/s</td>
+<td>伸缩同步控制的速度上限。</td>
+</tr>
+<tr>
+<td>伸缩长度</td>
+<td>0.357–0.477 m</td>
+<td>机构伸缩长度范围；SDK 通过 <code>extension_velocity</code> 控制伸缩。</td>
+</tr>
+<tr>
+<td>轮电机速度</td>
+<td>31.4159 rad/s</td>
+<td>电机上限；闭环轮速控制上限为 20.9440 rad/s，采用更严格者。</td>
+</tr>
+<tr>
+<td>转向角</td>
+<td>±2.7925 rad</td>
+<td>硬限为 ±2.7925 rad，转向角选择的软带为 ±2.3562 rad。</td>
+</tr>
+</tbody>
+</table>
+<p>转向对齐和伸缩状态可能进一步降低轮速；<code>vx/vy/vtheta</code> 的范围需按底盘运动约束确定。发送零速度后，应等待速度反馈确认停稳。</p>
+<h3 id="连续位置命令的平滑处理">连续位置命令的平滑处理<a class="headerlink" href="#连续位置命令的平滑处理" title="Permanent link">&para;</a></h3>
+<p>臂和躯干使用五次插值，将连续位置目标转换为高频控制目标。应用持续发送平滑目标。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>每侧臂</th>
+<th>躯干</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>控制周期</td>
+<td>1 ms（1000 Hz）</td>
+<td>2 ms（500 Hz）</td>
+</tr>
+<tr>
+<td>名义命令周期</td>
+<td>20 ms</td>
+<td>20 ms</td>
+</tr>
+<tr>
+<td>插值速度参数</td>
+<td>10 rad/s</td>
+<td>1.0472 rad/s（电机空间）</td>
+</tr>
+<tr>
+<td>插值加速度参数</td>
+<td>30 rad/s²</td>
+<td>2.0944 rad/s²（电机空间）</td>
+</tr>
+</tbody>
+</table>
+<p>名义周期用于插值参考，允许发送间隔波动。目标变化较大时，执行时间可能延长。插值参数、追赶速率和关节限速分别作用于不同阶段；应用负责规划速度、加速度和 jerk。</p>
+<p>机器人用五次多项式连接一段运动的起点与终点，同时衔接两端的位置、速度和加速度：</p>
+<div class="highlight"><pre><span></span><code>q(t) = a0 + a1 t + a2 t² + a3 t³ + a4 t⁴ + a5 t⁵,  0 ≤ t ≤ T
+</code></pre></div>
+<p>其中 <code>q</code> 为位置（rad），<code>T</code> 为本段时间（s）；六个系数由段首、段末的位置、速度和加速度确定。连续目标到来时，从当前运动状态衔接下一段。</p>
+<p><img alt="位置目标与平滑控制目标" src="../assets/zh/SDK/%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91/position-smoothing.svg" /></p>
+<p>图中仅示意段首、段末速度和加速度均为零的单段运动，此时令 <code>s=t/T</code>，有 <code>q(t)=q0+(q1−q0)(10s³−15s⁴+6s⁵)</code>；连续运动会使用实际端点速度和加速度。</p>
+<p>段长首先由命令周期估计，较大的目标变化会进一步延长执行时间：</p>
+<div class="highlight"><pre><span></span><code>T0 = clamp(1.5 P, Tc, 0.2 s)
+T  = max(T0, 1.875 × max_i |q1[i] − q0[i]| / vmax)
+</code></pre></div>
+<p><code>P</code> 为估计命令周期，<code>Tc</code> 为控制周期，<code>vmax</code> 为大于零的插值速度参数；位置与速度须使用相同坐标空间。0.2 s 限制的是时序估计段长，实际 <code>T</code> 可以更长。速度和加速度参数用于限制导数估计值及输出值；应用仍需检查完整轨迹的速度、加速度和 jerk。</p>
+<p>断流后保留段末位置，输出速度和加速度在 50 ms 内衰减。停稳状态通过设备反馈确认。</p>
+<p>手部直接接收最新完整目标，由应用保证目标连续。手部反馈超过 300 ms 无进展时标记过期。停止发送后仍可能继续执行已有目标，停稳状态通过设备反馈确认。</p>
+<h2 id="关闭与重连">关闭与重连<a class="headerlink" href="#关闭与重连" title="Permanent link">&para;</a></h2>
+<p>结束时先完成应用的任务停止流程，再关闭订阅及 SDK。<code>close()</code> 会取消订阅、清空缓存并释放本对象的对时会话；最后一个对时会话关闭后恢复原系统授时服务状态。重新连接后需要重建用户订阅。Python 可使用 <code>with NorthSDK(config)</code> 自动连接并关闭 SDK。</p>
+<h2 id="故障定位">故障定位<a class="headerlink" href="#故障定位" title="Permanent link">&para;</a></h2>
+<p>本节用于应用运行后的数据接收、服务调用和运动准入问题。启动、动态库或导入问题见<a href="#%E9%A6%96%E6%AC%A1%E8%BF%90%E8%A1%8C%E6%8E%92%E6%9F%A5">首次运行排查</a>，视频依赖和解码问题见<a href="#%E8%A7%86%E9%A2%91%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87">视频环境准备</a>。</p>
+<table>
+<thead>
+<tr>
+<th>现象</th>
+<th>检查</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无状态输出或流 silent</td>
+<td>订阅句柄是否仍存活、设备是否安装并在线、机器人侧是否发布数据、连接地址</td>
+</tr>
+<tr>
+<td>缓存读取失败</td>
+<td>是否收到样本、max_age 是否合理、设备是否持续更新</td>
+</tr>
+<tr>
+<td>调用报错或服务拒绝</td>
+<td>先检查 SDK 错误，再检查响应的 success/result 和 message，见<a href="api.html#%E9%94%99%E8%AF%AF%E4%B8%8E%E7%BB%93%E6%9E%9C%E6%A3%80%E6%9F%A5">错误与结果检查</a></td>
+</tr>
+<tr>
+<td>运行中设备故障</td>
+<td>停止发送运动目标，记录故障部位、error_code、fault_codes 和 Master reason。排除急停、掉线等原因后再按设备流程复位；故障持续时将上述信息和软件版本提供给技术支持。</td>
+</tr>
+<tr>
+<td>对时失败或失锁</td>
+<td>检查机器人有线连接、主机组件和对时诊断，见<a href="#%E6%97%B6%E9%97%B4%E5%90%8C%E6%AD%A5">时间同步</a>。</td>
+</tr>
+<tr>
+<td>运动被拒绝</td>
+<td>支持范围、完整目标、command_channel、Master 阶段和模式</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="overview.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: SDK 概览">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                SDK 概览
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="api.html" class="md-footer__link md-footer__link--next" aria-label="下一页: 软件服务接口">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                软件服务接口
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/manual.js"></script>
+      
+        <script src="../assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

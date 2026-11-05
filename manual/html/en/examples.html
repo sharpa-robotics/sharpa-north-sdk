@@ -1,0 +1,2560 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sharpa North SDK 用户手册 / User Manual">
+      
+      
+      
+      
+        <link rel="prev" href="api.html">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Example Code Reference - North SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/manual.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#example-code-reference" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../index.html" title="North SDK" class="md-header__button md-logo" aria-label="North SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            North SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Example Code Reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="North SDK" class="md-nav__button md-logo" aria-label="North SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    North SDK
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页 / Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中文
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    中文
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zh/overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK 概览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zh/development.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zh/api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件服务接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zh/examples.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    例程参考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="development.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Service Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Code Reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="examples.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Code Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example index
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#included-quickstart-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Included quickstart programs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-only-connection-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read-only connection diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-entry-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared entry point
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-master-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to Master status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to Master status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-cached-left-arm-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read cached left-arm state
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Read cached left-arm state">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-torso-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to torso state
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to torso state">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-hand-tactile-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to hand tactile images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to hand tactile images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-hand-calibration-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query hand calibration status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query hand calibration status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-imu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to IMU
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to IMU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-lidar-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to Lidar points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to Lidar points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-valid-battery-measurements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read valid battery measurements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Read valid battery measurements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-head-jpeg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to head JPEG
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to head JPEG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browser-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browser preview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#align-two-arm-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Align two-arm state
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Align two-arm state">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-configuration-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query configuration instances
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query configuration instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#master-mode-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Master mode service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Master mode service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-a-single-arm-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Send a single-arm target
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Send a single-arm target">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wholebody-two-arm-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WholeBody two-arm command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WholeBody two-arm command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#example-index" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example index
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#included-quickstart-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Included quickstart programs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-only-connection-diagnostics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read-only connection diagnostics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shared-entry-point" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared entry point
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-master-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to Master status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to Master status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-cached-left-arm-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read cached left-arm state
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Read cached left-arm state">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-torso-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to torso state
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to torso state">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-hand-tactile-images" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to hand tactile images
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to hand tactile images">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-hand-calibration-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query hand calibration status
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query hand calibration status">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-imu" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to IMU
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to IMU">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-lidar-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to Lidar points
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to Lidar points">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read-valid-battery-measurements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read valid battery measurements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Read valid battery measurements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscribe-to-head-jpeg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscribe to head JPEG
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Subscribe to head JPEG">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#browser-preview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browser preview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#align-two-arm-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Align two-arm state
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Align two-arm state">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#query-configuration-instances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Query configuration instances
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Query configuration instances">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#master-mode-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Master mode service
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Master mode service">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-a-single-arm-target" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Send a single-arm target
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Send a single-arm target">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wholebody-two-arm-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WholeBody two-arm command
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WholeBody two-arm command">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#c_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        C++
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="example-code-reference">Example Code Reference<a class="headerlink" href="#example-code-reference" title="Permanent link">&para;</a></h1>
+<div class="manual-language"><a href="../zh/examples.html">中文</a></div>
+
+<h2 id="example-index">Example index<a class="headerlink" href="#example-index" title="Permanent link">&para;</a></h2>
+<p>Examples are organized by common tasks. Start with quickstart, then select a Client example. Motion examples have separate prerequisites. Combine one example function with the shared entry point to create a standalone application.</p>
+<table>
+<thead>
+<tr>
+<th>Client</th>
+<th>Task</th>
+<th>C++ call</th>
+<th>Python call</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MasterClient</td>
+<td><a href="#subscribe-to-master-status">Subscribe to Master status</a></td>
+<td><code>master_status(*sdk);</code></td>
+<td><code>master_status(sdk)</code></td>
+</tr>
+<tr>
+<td>ArmClient</td>
+<td><a href="#read-cached-left-arm-state">Read cached left-arm state</a></td>
+<td><code>arm_cache(*sdk);</code></td>
+<td><code>arm_cache(sdk)</code></td>
+</tr>
+<tr>
+<td>TorsoClient</td>
+<td><a href="#subscribe-to-torso-state">Subscribe to torso state</a></td>
+<td><code>torso_state(*sdk);</code></td>
+<td><code>torso_state(sdk)</code></td>
+</tr>
+<tr>
+<td>HandClient</td>
+<td><a href="#subscribe-to-hand-tactile-images">Subscribe to hand tactile images</a></td>
+<td><code>hand_tactile(*sdk);</code></td>
+<td><code>hand_tactile(sdk)</code></td>
+</tr>
+<tr>
+<td>HandClient</td>
+<td><a href="#query-hand-calibration-status">Query hand calibration status</a></td>
+<td><code>hand_calibration_status(*sdk);</code></td>
+<td><code>hand_calibration_status(sdk)</code></td>
+</tr>
+<tr>
+<td>SensorClient</td>
+<td><a href="#subscribe-to-imu">Subscribe to IMU</a></td>
+<td><code>imu_state(*sdk);</code></td>
+<td><code>imu_state(sdk)</code></td>
+</tr>
+<tr>
+<td>SensorClient</td>
+<td><a href="#subscribe-to-lidar-points">Subscribe to Lidar points</a></td>
+<td><code>lidar_points(*sdk);</code></td>
+<td><code>lidar_points(sdk)</code></td>
+</tr>
+<tr>
+<td>PowerClient</td>
+<td><a href="#read-valid-battery-measurements">Read valid battery measurements</a></td>
+<td><code>battery_state(*sdk);</code></td>
+<td><code>battery_state(sdk)</code></td>
+</tr>
+<tr>
+<td>VideoClient</td>
+<td><a href="#subscribe-to-head-jpeg">Subscribe to head JPEG</a></td>
+<td><code>head_jpeg(*sdk);</code></td>
+<td><code>head_jpeg(sdk)</code></td>
+</tr>
+<tr>
+<td>AlignmentClient</td>
+<td><a href="#align-two-arm-state">Align two-arm state</a></td>
+<td><code>aligned_arms(*sdk);</code></td>
+<td><code>aligned_arms(sdk)</code></td>
+</tr>
+<tr>
+<td>ConfigClient</td>
+<td><a href="#query-configuration-instances">Query configuration instances</a></td>
+<td><code>config_instances(*sdk);</code></td>
+<td><code>config_instances(sdk)</code></td>
+</tr>
+<tr>
+<td>MasterClient</td>
+<td><a href="#master-mode-service">Master mode service</a></td>
+<td><code>change_master_mode(*sdk, requested);</code></td>
+<td><code>change_master_mode(sdk, requested)</code></td>
+</tr>
+<tr>
+<td>ArmClient</td>
+<td><a href="#send-a-single-arm-target">Send a single-arm target</a></td>
+<td><code>send_right_arm(*sdk, target);</code></td>
+<td><code>send_right_arm(sdk, target)</code></td>
+</tr>
+<tr>
+<td>WholeBodyClient</td>
+<td><a href="#wholebody-two-arm-command">WholeBody two-arm command</a></td>
+<td><code>send_two_arms(*sdk, channel, left, right);</code></td>
+<td><code>send_two_arms(sdk, channel, left, right)</code></td>
+</tr>
+</tbody>
+</table>
+<p>Calls using <code>requested</code>, <code>target</code>, <code>channel</code>, <code>left</code> or <code>right</code> require application-provided arguments and the mode-change or motion prerequisites stated in their sections.</p>
+<h2 id="included-quickstart-programs">Included quickstart programs<a class="headerlink" href="#included-quickstart-programs" title="Permanent link">&para;</a></h2>
+<p><code>examples/cpp/quickstart.cpp</code> and <code>examples/python/quickstart.py</code> demonstrate left-arm state subscription, handle retention and clean shutdown. Both accept an endpoint on the command line. C++ also accepts a Zenoh configuration path; Python uses <code>--zenoh-config</code>. State callbacks print sequence and joint count; press Ctrl+C to exit.</p>
+<p>The example selects the left arm with <code>sdk.arm(Side::kLeft)</code> / <code>sdk.arm(Side.LEFT)</code>. Omitting <code>SubscribeOptions</code> uses the default DropOldest callback policy. Retain the Subscription until shutdown. See <a href="api.html#armclient"><code>ArmClient::on_state</code></a> for complete parameters and queue semantics.</p>
+<div class="highlight"><pre><span></span><code><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/bin/north_sdk_quickstart"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span>
+python3<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/examples/python/quickstart.py"</span><span class="w"> </span>--endpoint<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span>
+</code></pre></div>
+<p>Load the environment and set the robot endpoint through <a href="development.html#quick-start">Quick Start</a>. Commands run from any directory.</p>
+<h2 id="read-only-connection-diagnostics">Read-only connection diagnostics<a class="headerlink" href="#read-only-connection-diagnostics" title="Permanent link">&para;</a></h2>
+<p>The installed north_sdk_robot_smoke counts state samples and rates over a bounded duration to check connection and reception. The complete package also includes the Python equivalent:</p>
+<div class="highlight"><pre><span></span><code><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/bin/north_sdk_robot_smoke"</span><span class="w"> </span>--endpoint<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span><span class="w"> </span>--seconds<span class="w"> </span><span class="m">5</span>
+python3<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/examples/python/robot_smoke.py"</span><span class="w"> </span>--endpoint<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span><span class="w"> </span>--seconds<span class="w"> </span><span class="m">5</span>
+</code></pre></div>
+<p>Receiving Master status, hardware health and at least one heartbeat produces PASS and exit code 0. Check silent streams against the actual device configuration. Add <code>--query</code> for read-only service queries and inspect each result.</p>
+<h2 id="shared-entry-point">Shared entry point<a class="headerlink" href="#shared-entry-point" title="Permanent link">&para;</a></h2>
+<p>C++: create main.cpp containing these includes, one selected example function, then the entry point, in that order. Replace the default master_status(*sdk) call for other examples. Integrate the selected example into your existing C++ application using the delivered public headers and libraries.</p>
+<div class="highlight"><pre><span></span><code><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;north_sdk/NorthSDK.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;array&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;chrono&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdexcept&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;thread&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;utility&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">argc</span><span class="p">,</span><span class="w"> </span><span class="kt">char</span><span class="o">**</span><span class="w"> </span><span class="n">argv</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">argc</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"usage: north_sdk_app &lt;endpoint&gt;</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">north</span><span class="o">::</span><span class="n">SdkConfig</span><span class="w"> </span><span class="n">config</span><span class="p">;</span>
+<span class="w">        </span><span class="n">config</span><span class="p">.</span><span class="n">connect_endpoints</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]};</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">::</span><span class="n">Create</span><span class="p">(</span><span class="n">config</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">created</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">created</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">sdk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">created</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">connected</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="o">-&gt;</span><span class="n">connect</span><span class="p">();</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">connected</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">connected</span><span class="p">.</span><span class="n">message</span><span class="p">());</span>
+<span class="w">        </span><span class="n">master_status</span><span class="p">(</span><span class="o">*</span><span class="n">sdk</span><span class="p">);</span>
+<span class="w">        </span><span class="n">sdk</span><span class="o">-&gt;</span><span class="n">close</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">exception</span><span class="o">&amp;</span><span class="w"> </span><span class="n">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cerr</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">error</span><span class="p">.</span><span class="n">what</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Compile and run using <code>NORTHSDK_PREFIX</code> from Quick Start:</p>
+<div class="highlight"><pre><span></span><code>g++<span class="w"> </span>-std<span class="o">=</span>c++17<span class="w"> </span>main.cpp<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-I<span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/include"</span><span class="w"> </span>-L<span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/lib"</span><span class="w"> </span>-lnorth_sdk<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-Wl,-rpath,<span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/lib"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>north_sdk_app
+./north_sdk_app<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span>
+</code></pre></div>
+<p>Python: create app.py with these imports, one selected example function, then the entry point. Replace the example call in the entry point.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">north_sdk</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
+    <span class="n">NorthSDK</span><span class="p">,</span> <span class="n">SdkConfig</span><span class="p">,</span> <span class="n">NorthSDKError</span><span class="p">,</span> <span class="n">ErrorCode</span><span class="p">,</span> <span class="n">Side</span><span class="p">,</span>
+    <span class="n">TactileImageKind</span><span class="p">,</span> <span class="n">PowerDataQuality</span><span class="p">,</span> <span class="n">MasterResult</span><span class="p">,</span> <span class="n">LidarSource</span><span class="p">,</span> <span class="n">LidarPayloadKind</span><span class="p">,</span>
+    <span class="n">OperationMode</span><span class="p">,</span> <span class="n">CommandChannel</span><span class="p">,</span> <span class="n">WholeBodyCommand</span><span class="p">,</span> <span class="n">ArmCommand</span><span class="p">,</span>
+<span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="s2">"usage: python3 app.py &lt;endpoint&gt;"</span><span class="p">)</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">SdkConfig</span><span class="p">()</span>
+    <span class="n">config</span><span class="o">.</span><span class="n">connect_endpoints</span> <span class="o">=</span> <span class="p">[</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="n">NorthSDK</span><span class="p">(</span><span class="n">config</span><span class="p">)</span> <span class="k">as</span> <span class="n">sdk</span><span class="p">:</span>
+            <span class="n">master_status</span><span class="p">(</span><span class="n">sdk</span><span class="p">)</span>  <span class="c1"># Replace with one example call from the index.</span>
+    <span class="k">except</span> <span class="p">(</span><span class="n">NorthSDKError</span><span class="p">,</span> <span class="ne">RuntimeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">error</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">sys</span><span class="o">.</span><span class="n">stderr</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">SystemExit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>app.py<span class="w"> </span>udp/192.168.100.100:7449
+</code></pre></div>
+<p>The read-only subscription examples close their subscriptions after five seconds and require the robot to publish the corresponding data. The entry point reports exceptions, while each example checks business results.</p>
+<h2 id="subscribe-to-master-status">Subscribe to Master status<a class="headerlink" href="#subscribe-to-master-status" title="Permanent link">&para;</a></h2>
+<p>Receive robot phase, mode and task ID. Retain the subscription for five seconds; an active publisher produces multiple lines.</p>
+<h3 id="c">C++<a class="headerlink" href="#c" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">master_status</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">master</span><span class="p">().</span><span class="n">on_status</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">MasterStatus</span><span class="o">&amp;</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"phase="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">phase</span><span class="p">)</span>
+<span class="w">                  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" mode="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">mode</span><span class="p">)</span>
+<span class="w">                  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" task="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">task_id</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sub</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python">Python<a class="headerlink" href="#python" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">master_status</span><span class="p">(</span><span class="n">sdk</span><span class="p">):</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">master</span><span class="p">()</span><span class="o">.</span><span class="n">on_status</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">state</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">phase</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">state</span><span class="o">.</span><span class="n">task_id</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">sub</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="read-cached-left-arm-state">Read cached left-arm state<a class="headerlink" href="#read-cached-left-arm-state" title="Permanent link">&para;</a></h2>
+<p>Try for up to two seconds to read left-arm state received within 500 ms. The first call may lack data. Retry only kStaleState; valid state prints the position count. Cache reads establish the required state reception automatically.</p>
+<p>This example uses a 500 ms cache-age limit and a two-second first-sample wait. Choose values from the device publication period and application latency requirements. See <a href="api.html#armclient"><code>ArmClient::latest_state</code></a>.</p>
+<h3 id="c_1">C++<a class="headerlink" href="#c_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">arm_cache</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">arm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">arm</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">Side</span><span class="o">::</span><span class="n">kLeft</span><span class="p">);</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">deadline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">steady_clock</span><span class="o">::</span><span class="n">now</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">deadline</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arm</span><span class="p">.</span><span class="n">latest_state</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">500</span><span class="p">));</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"joints="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">().</span><span class="n">joints</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">code</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">ErrorCode</span><span class="o">::</span><span class="n">kStaleState</span><span class="p">)</span>
+<span class="w">            </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">milliseconds</span><span class="p">(</span><span class="mi">50</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">"No fresh left-arm state within 2 seconds"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_1">Python<a class="headerlink" href="#python_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">arm_cache</span><span class="p">(</span><span class="n">sdk</span><span class="p">):</span>
+    <span class="n">arm</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">arm</span><span class="p">(</span><span class="n">Side</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+    <span class="n">deadline</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">+</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="n">time</span><span class="o">.</span><span class="n">monotonic</span><span class="p">()</span> <span class="o">&lt;</span> <span class="n">deadline</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">state</span> <span class="o">=</span> <span class="n">arm</span><span class="o">.</span><span class="n">latest_state</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">NorthSDKError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">error</span><span class="o">.</span><span class="n">code</span> <span class="o">!=</span> <span class="n">ErrorCode</span><span class="o">.</span><span class="n">STALE_STATE</span><span class="p">:</span>
+                <span class="k">raise</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.05</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"joints="</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">joints</span><span class="o">.</span><span class="n">position</span><span class="p">))</span>
+            <span class="k">return</span>
+    <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"No fresh left-arm state within 2 seconds"</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="subscribe-to-torso-state">Subscribe to torso state<a class="headerlink" href="#subscribe-to-torso-state" title="Permanent link">&para;</a></h2>
+<p>Retain a subscription for five seconds and print position count. Complete joint positions contain eight entries: body J1–J5 then neck J6–J8.</p>
+<h3 id="c_2">C++<a class="headerlink" href="#c_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">torso_state</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">torso</span><span class="p">().</span><span class="n">on_state</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">TorsoState</span><span class="o">&amp;</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"torso joints="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">joints</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sub</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_2">Python<a class="headerlink" href="#python_2" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">torso_state</span><span class="p">(</span><span class="n">sdk</span><span class="p">):</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">torso</span><span class="p">()</span><span class="o">.</span><span class="n">on_state</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">state</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"torso joints="</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">state</span><span class="o">.</span><span class="n">joints</span><span class="o">.</span><span class="n">position</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">sub</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="subscribe-to-hand-tactile-images">Subscribe to hand tactile images<a class="headerlink" href="#subscribe-to-hand-tactile-images" title="Permanent link">&para;</a></h2>
+<p>Subscribe to the left thumb raw tactile image for five seconds. finger=4 selects the thumb. Print format and binary payload length; use the message format when decoding.</p>
+<h3 id="c_3">C++<a class="headerlink" href="#c_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">hand_tactile</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">hand</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">Side</span><span class="o">::</span><span class="n">kLeft</span><span class="p">).</span><span class="n">on_tactile_image</span><span class="p">(</span>
+<span class="w">        </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">TactileImageKind</span><span class="o">::</span><span class="n">kRaw</span><span class="p">,</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">CompressedImage</span><span class="o">&amp;</span><span class="w"> </span><span class="n">image</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"format="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">image</span><span class="p">.</span><span class="n">format</span>
+<span class="w">                      </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" bytes="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">image</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sub</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_3">Python<a class="headerlink" href="#python_3" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hand_tactile</span><span class="p">(</span><span class="n">sdk</span><span class="p">):</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">hand</span><span class="p">(</span><span class="n">Side</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span><span class="o">.</span><span class="n">on_tactile_image</span><span class="p">(</span>
+        <span class="mi">4</span><span class="p">,</span> <span class="n">TactileImageKind</span><span class="o">.</span><span class="n">RAW</span><span class="p">,</span>
+        <span class="k">lambda</span> <span class="n">image</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"format="</span><span class="p">,</span> <span class="n">image</span><span class="o">.</span><span class="n">format</span><span class="p">,</span> <span class="s2">"bytes="</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">data</span><span class="p">)),</span>
+    <span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">sub</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="query-hand-calibration-status">Query hand calibration status<a class="headerlink" href="#query-hand-calibration-status" title="Permanent link">&para;</a></h2>
+<p>Query left-hand zero-calibration status. Handle SDK failure and business rejection separately, then print the response message.</p>
+<h3 id="c_4">C++<a class="headerlink" href="#c_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">hand_calibration_status</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">hand</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">Side</span><span class="o">::</span><span class="n">kLeft</span><span class="p">).</span><span class="n">zero_calibration_status</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">"SDK error: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">().</span><span class="n">success</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">"Service rejected: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">().</span><span class="n">message</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_4">Python<a class="headerlink" href="#python_4" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">hand_calibration_status</span><span class="p">(</span><span class="n">sdk</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">hand</span><span class="p">(</span><span class="n">Side</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span><span class="o">.</span><span class="n">zero_calibration_status</span><span class="p">()</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">response</span><span class="o">.</span><span class="n">success</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Service rejected: "</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="subscribe-to-imu">Subscribe to IMU<a class="headerlink" href="#subscribe-to-imu" title="Permanent link">&para;</a></h2>
+<p>Subscribe for five seconds. Iterate through imus in each sample and print angular velocity x in rad/s. The robot must provide an IMU source.</p>
+<h3 id="c_5">C++<a class="headerlink" href="#c_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">imu_state</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">sensors</span><span class="p">().</span><span class="n">on_imu</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">ImuSamples</span><span class="o">&amp;</span><span class="w"> </span><span class="n">samples</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">imu</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">samples</span><span class="p">.</span><span class="n">imus</span><span class="p">)</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"angular_velocity.x="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">imu</span><span class="p">.</span><span class="n">angular_velocity</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sub</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_5">Python<a class="headerlink" href="#python_5" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">imu_state</span><span class="p">(</span><span class="n">sdk</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="n">samples</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">imu</span> <span class="ow">in</span> <span class="n">samples</span><span class="o">.</span><span class="n">imus</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">"angular_velocity.x="</span><span class="p">,</span> <span class="n">imu</span><span class="o">.</span><span class="n">angular_velocity</span><span class="o">.</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">sensors</span><span class="p">()</span><span class="o">.</span><span class="n">on_imu</span><span class="p">(</span><span class="n">display</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">sub</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="subscribe-to-lidar-points">Subscribe to Lidar points<a class="headerlink" href="#subscribe-to-lidar-points" title="Permanent link">&para;</a></h2>
+<p>Subscribe to the chassis-front Lidar for five seconds and print the first point of each frame: coordinates in meters and reflectivity. The SDK decompresses Zstd automatically. Select chest front or chest rear as needed; the robot must have the corresponding device installed and publishing.</p>
+<h3 id="c_6">C++<a class="headerlink" href="#c_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">lidar_points</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">sensors</span><span class="p">().</span><span class="n">on_lidar</span><span class="p">(</span>
+<span class="w">        </span><span class="n">north</span><span class="o">::</span><span class="n">LidarSource</span><span class="o">::</span><span class="n">kChassisFront</span><span class="p">,</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">LidarFrame</span><span class="o">&amp;</span><span class="w"> </span><span class="n">frame</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="k">auto</span><span class="w"> </span><span class="n">print_first</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">groups</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">groups</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">group</span><span class="p">.</span><span class="n">points</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span>
+<span class="w">                    </span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">point</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">group</span><span class="p">.</span><span class="n">points</span><span class="p">.</span><span class="n">front</span><span class="p">();</span>
+<span class="w">                    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"xyz(m)="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">point</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">','</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">point</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">','</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">point</span><span class="p">.</span><span class="n">z</span>
+<span class="w">                              </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" reflectivity="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">point</span><span class="p">.</span><span class="n">reflectivity</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">                    </span><span class="k">break</span><span class="p">;</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">};</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">frame</span><span class="p">.</span><span class="n">kind</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">LidarPayloadKind</span><span class="o">::</span><span class="n">kLaserShots</span><span class="p">)</span>
+<span class="w">                </span><span class="n">print_first</span><span class="p">(</span><span class="n">frame</span><span class="p">.</span><span class="n">laser_shots</span><span class="p">);</span>
+<span class="w">            </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">frame</span><span class="p">.</span><span class="n">kind</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">LidarPayloadKind</span><span class="o">::</span><span class="n">kSubAreas</span><span class="p">)</span>
+<span class="w">                </span><span class="n">print_first</span><span class="p">(</span><span class="n">frame</span><span class="p">.</span><span class="n">sub_areas</span><span class="p">);</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sub</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_6">Python<a class="headerlink" href="#python_6" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">lidar_points</span><span class="p">(</span><span class="n">sdk</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="n">frame</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">frame</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">LidarPayloadKind</span><span class="o">.</span><span class="n">LASER_SHOTS</span><span class="p">:</span>
+            <span class="n">groups</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">laser_shots</span>
+        <span class="k">elif</span> <span class="n">frame</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">LidarPayloadKind</span><span class="o">.</span><span class="n">SUB_AREAS</span><span class="p">:</span>
+            <span class="n">groups</span> <span class="o">=</span> <span class="n">frame</span><span class="o">.</span><span class="n">sub_areas</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">groups</span><span class="p">:</span>
+            <span class="n">points</span> <span class="o">=</span> <span class="n">group</span><span class="o">.</span><span class="n">points</span>
+            <span class="k">if</span> <span class="n">points</span><span class="p">:</span>
+                <span class="n">point</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"xyz(m)="</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">z</span><span class="p">,</span>
+                      <span class="s2">"reflectivity="</span><span class="p">,</span> <span class="n">point</span><span class="o">.</span><span class="n">reflectivity</span><span class="p">)</span>
+                <span class="k">break</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">sensors</span><span class="p">()</span><span class="o">.</span><span class="n">on_lidar</span><span class="p">(</span><span class="n">LidarSource</span><span class="o">.</span><span class="n">CHASSIS_FRONT</span><span class="p">,</span> <span class="n">display</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">sub</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="read-valid-battery-measurements">Read valid battery measurements<a class="headerlink" href="#read-valid-battery-measurements" title="Permanent link">&para;</a></h2>
+<p>Subscribe to battery state for five seconds. Check voltage.quality and optional value for each pack, printing voltage in V only when valid. Otherwise print unavailable. If callbacks are absent, inspect the source and connection.</p>
+<h3 id="c_7">C++<a class="headerlink" href="#c_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">battery_state</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">power</span><span class="p">().</span><span class="n">on_battery</span><span class="p">([](</span><span class="k">const</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">BatterySystemState</span><span class="o">&amp;</span><span class="w"> </span><span class="n">state</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">pack</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">state</span><span class="p">.</span><span class="n">packs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"pack="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">pack</span><span class="p">.</span><span class="n">pack_id</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" voltage="</span><span class="p">;</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pack</span><span class="p">.</span><span class="n">voltage</span><span class="p">.</span><span class="n">quality</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">PowerDataQuality</span><span class="o">::</span><span class="n">kValid</span>
+<span class="w">                    </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">pack</span><span class="p">.</span><span class="n">voltage</span><span class="p">.</span><span class="n">value</span><span class="p">)</span>
+<span class="w">                </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">pack</span><span class="p">.</span><span class="n">voltage</span><span class="p">.</span><span class="n">value</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" V</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+<span class="w">            </span><span class="k">else</span>
+<span class="w">                </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"unavailable</span><span class="se">\n</span><span class="s">"</span><span class="p">;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="w">    </span><span class="n">sub</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_7">Python<a class="headerlink" href="#python_7" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">battery_state</span><span class="p">(</span><span class="n">sdk</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="n">state</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">pack</span> <span class="ow">in</span> <span class="n">state</span><span class="o">.</span><span class="n">packs</span><span class="p">:</span>
+            <span class="n">reading</span> <span class="o">=</span> <span class="n">pack</span><span class="o">.</span><span class="n">voltage</span>
+            <span class="k">if</span> <span class="n">reading</span><span class="o">.</span><span class="n">quality</span> <span class="o">==</span> <span class="n">PowerDataQuality</span><span class="o">.</span><span class="n">VALID</span> <span class="ow">and</span> <span class="n">reading</span><span class="o">.</span><span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"pack="</span><span class="p">,</span> <span class="n">pack</span><span class="o">.</span><span class="n">pack_id</span><span class="p">,</span> <span class="s2">"voltage="</span><span class="p">,</span> <span class="n">reading</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">"pack="</span><span class="p">,</span> <span class="n">pack</span><span class="o">.</span><span class="n">pack_id</span><span class="p">,</span> <span class="s2">"voltage=unavailable"</span><span class="p">)</span>
+    <span class="n">sub</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">power</span><span class="p">()</span><span class="o">.</span><span class="n">on_battery</span><span class="p">(</span><span class="n">display</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">sub</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="subscribe-to-head-jpeg">Subscribe to head JPEG<a class="headerlink" href="#subscribe-to-head-jpeg" title="Permanent link">&para;</a></h2>
+<p>This example selects head-left with NVIDIA hardware decoding by default. Load the package environment and complete the <a href="development.html#check-the-video-environment">video environment check</a> first.</p>
+<p>Software-decoder options for each program are listed below:</p>
+<table>
+<thead>
+<tr>
+<th>Program or API</th>
+<th>Select software decoding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C++ capture program <code>north_sdk_video_jpeg</code></td>
+<td>Pass <code>--software</code> at runtime; <code>--nvdec</code> selects hardware</td>
+</tr>
+<tr>
+<td>Four-camera preview <code>examples/python/four_camera_viewer.py</code></td>
+<td>Pass <code>--decoder software</code>; <code>--decoder nvdec</code> selects hardware</td>
+</tr>
+<tr>
+<td>Your C++ application</td>
+<td>Before subscribing, set <code>options.decoder_backend = north::VideoDecoderBackend::kSoftware</code></td>
+</tr>
+<tr>
+<td>Your Python application</td>
+<td>Before subscribing, set <code>options.decoder_backend = VideoDecoderBackend.SOFTWARE</code></td>
+</tr>
+</tbody>
+</table>
+<p>The minimal subscription example below retains default hardware decoding; use the table to select software.</p>
+<h3 id="browser-preview">Browser preview<a class="headerlink" href="#browser-preview" title="Permanent link">&para;</a></h3>
+<p>Preview both head and both wrist cameras:</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/examples/python/four_camera_viewer.py"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--endpoint<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span><span class="w"> </span>--decoder<span class="w"> </span>nvdec<span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span>
+</code></pre></div>
+<p>The program opens a local browser; alternatively visit <code>http://127.0.0.1:8080/</code>. Without an NVIDIA GPU, use <code>--decoder software</code>. Press Ctrl+C or click the stop-preview button to exit. Cameras must already be online and publishing.</p>
+<h3 id="c_8">C++<a class="headerlink" href="#c_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">head_jpeg</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">north</span><span class="o">::</span><span class="n">VideoOptions</span><span class="w"> </span><span class="n">options</span><span class="p">;</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">video</span><span class="p">().</span><span class="n">on_jpeg</span><span class="p">(</span>
+<span class="w">        </span><span class="n">north</span><span class="o">::</span><span class="n">VideoSource</span><span class="o">::</span><span class="n">kHeadLeft</span><span class="p">,</span>
+<span class="w">        </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">JpegFrame</span><span class="o">&amp;</span><span class="w"> </span><span class="n">frame</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">frame</span><span class="p">.</span><span class="n">width</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'x'</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">frame</span><span class="p">.</span><span class="n">height</span>
+<span class="w">                      </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" bytes="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">frame</span><span class="p">.</span><span class="n">data</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">        </span><span class="p">},</span><span class="w"> </span><span class="n">options</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">subscription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="w">    </span><span class="n">subscription</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_8">Python<a class="headerlink" href="#python_8" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">head_jpeg</span><span class="p">(</span><span class="n">sdk</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">north_sdk</span><span class="w"> </span><span class="kn">import</span> <span class="n">VideoDecoderBackend</span><span class="p">,</span> <span class="n">VideoOptions</span><span class="p">,</span> <span class="n">VideoSource</span>
+
+    <span class="n">options</span> <span class="o">=</span> <span class="n">VideoOptions</span><span class="p">()</span>
+    <span class="n">subscription</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">video</span><span class="p">()</span><span class="o">.</span><span class="n">on_jpeg</span><span class="p">(</span>
+        <span class="n">VideoSource</span><span class="o">.</span><span class="n">HEAD_LEFT</span><span class="p">,</span>
+        <span class="k">lambda</span> <span class="n">frame</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">height</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">data</span><span class="p">)),</span>
+        <span class="n">options</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">subscription</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p>Only one active subscription is allowed per source; retain the handle. See <a href="api.html#videoclient"><code>VideoClient</code></a> for dependencies, options, and diagnostics.</p>
+<h2 id="align-two-arm-state">Align two-arm state<a class="headerlink" href="#align-two-arm-state" title="Permanent link">&para;</a></h2>
+<p>This example uses left ArmState as baseline and matches right ArmState. Matching defaults to AtOrBefore with a fixed 7.5 ms right-arm tolerance; the first valid sample can be matched.</p>
+<h3 id="c_9">C++<a class="headerlink" href="#c_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">aligned_arms</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">north</span><span class="o">::</span><span class="n">AlignmentSource</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
+<span class="w">    </span><span class="n">left</span><span class="p">.</span><span class="n">kind</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">AlignmentDataKind</span><span class="o">::</span><span class="n">kArmState</span><span class="p">;</span>
+<span class="w">    </span><span class="n">left</span><span class="p">.</span><span class="n">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">Side</span><span class="o">::</span><span class="n">kLeft</span><span class="p">;</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
+<span class="w">    </span><span class="n">right</span><span class="p">.</span><span class="n">side</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">Side</span><span class="o">::</span><span class="n">kRight</span><span class="p">;</span>
+<span class="w">    </span><span class="n">north</span><span class="o">::</span><span class="n">AlignmentOptions</span><span class="w"> </span><span class="n">options</span><span class="p">;</span>
+<span class="w">    </span><span class="n">options</span><span class="p">.</span><span class="n">baseline</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="p">;</span>
+<span class="w">    </span><span class="n">options</span><span class="p">.</span><span class="n">sources</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">right</span><span class="p">};</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">alignment</span><span class="p">().</span><span class="n">on_frame</span><span class="p">(</span><span class="n">options</span><span class="p">,</span><span class="w"> </span><span class="p">[](</span><span class="k">const</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">AlignedFrame</span><span class="o">&amp;</span><span class="w"> </span><span class="n">frame</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">frame</span><span class="p">.</span><span class="n">timestamp_ns</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" complete="</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">frame</span><span class="p">.</span><span class="n">complete</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="w">    </span><span class="p">});</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">subscription</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">move</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">this_thread</span><span class="o">::</span><span class="n">sleep_for</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">chrono</span><span class="o">::</span><span class="n">seconds</span><span class="p">(</span><span class="mi">5</span><span class="p">));</span>
+<span class="w">    </span><span class="n">subscription</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_9">Python<a class="headerlink" href="#python_9" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">aligned_arms</span><span class="p">(</span><span class="n">sdk</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">north_sdk</span><span class="w"> </span><span class="kn">import</span> <span class="n">AlignmentDataKind</span><span class="p">,</span> <span class="n">AlignmentOptions</span><span class="p">,</span> <span class="n">AlignmentSource</span><span class="p">,</span> <span class="n">Side</span>
+
+    <span class="n">left</span> <span class="o">=</span> <span class="n">AlignmentSource</span><span class="p">()</span>
+    <span class="n">left</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="n">AlignmentDataKind</span><span class="o">.</span><span class="n">ARM_STATE</span>
+    <span class="n">left</span><span class="o">.</span><span class="n">side</span> <span class="o">=</span> <span class="n">Side</span><span class="o">.</span><span class="n">LEFT</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="n">AlignmentSource</span><span class="p">()</span>
+    <span class="n">right</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="n">AlignmentDataKind</span><span class="o">.</span><span class="n">ARM_STATE</span>
+    <span class="n">right</span><span class="o">.</span><span class="n">side</span> <span class="o">=</span> <span class="n">Side</span><span class="o">.</span><span class="n">RIGHT</span>
+    <span class="n">options</span> <span class="o">=</span> <span class="n">AlignmentOptions</span><span class="p">()</span>
+    <span class="n">options</span><span class="o">.</span><span class="n">baseline</span> <span class="o">=</span> <span class="n">left</span>
+    <span class="n">options</span><span class="o">.</span><span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="n">right</span><span class="p">]</span>
+    <span class="n">subscription</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">alignment</span><span class="p">()</span><span class="o">.</span><span class="n">on_frame</span><span class="p">(</span>
+        <span class="n">options</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">frame</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">timestamp_ns</span><span class="p">,</span> <span class="n">frame</span><span class="o">.</span><span class="n">complete</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+    <span class="n">subscription</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div>
+<p><code>frame.samples[0]</code> is the right arm and <code>offset_ns</code> is right minus left time. See <a href="api.html#alignmentclient"><code>AlignmentClient</code></a> for matching and diagnostics.</p>
+<h2 id="query-configuration-instances">Query configuration instances<a class="headerlink" href="#query-configuration-instances" title="Permanent link">&para;</a></h2>
+<p>An empty <code>plugin_id</code> discovers all ready instances. Check both SDK failure and <code>ConfigResult</code>.</p>
+<h3 id="c_10">C++<a class="headerlink" href="#c_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">config_instances</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">config</span><span class="p">().</span><span class="n">get</span><span class="p">();</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">().</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">ConfigResult</span><span class="o">::</span><span class="n">kOk</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">"configuration query rejected"</span><span class="p">);</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">().</span><span class="n">instances</span><span class="p">)</span>
+<span class="w">        </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">instance</span><span class="p">.</span><span class="n">plugin_id</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_10">Python<a class="headerlink" href="#python_10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">config_instances</span><span class="p">(</span><span class="n">sdk</span><span class="p">):</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">north_sdk</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConfigResult</span>
+
+    <span class="n">response</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">config</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">result</span> <span class="o">!=</span> <span class="n">ConfigResult</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">diagnostics</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">instances</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">instance</span><span class="o">.</span><span class="n">plugin_id</span><span class="p">)</span>
+</code></pre></div>
+<p>Pass an ID returned by discovery, such as <code>get("chassis")</code>, for one instance. See <a href="api.html#configclient"><code>ConfigClient</code></a> for persistent SET/RESET parameters and timeout handling.</p>
+<h2 id="master-mode-service">Master mode service<a class="headerlink" href="#master-mode-service" title="Permanent link">&para;</a></h2>
+<p>This example changes robot mode. Call it only when the application has confirmed that switching is allowed. The application selects requested. Master responses use result rather than success; continue observing state after success.</p>
+<p><code>requested</code> is an <code>OperationMode</code>: Teleoperation, Inference or Automation. Select a mode that corresponds to the CommandChannel used by later motion. See <a href="api.html#masterclient"><code>MasterClient::set_mode</code></a> for parameters, results, and timeout handling.</p>
+<h3 id="c_11">C++<a class="headerlink" href="#c_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">change_master_mode</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">,</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">OperationMode</span><span class="w"> </span><span class="n">requested</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">master</span><span class="p">().</span><span class="n">set_mode</span><span class="p">(</span><span class="n">requested</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">"SDK error: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">error</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">().</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">MasterResult</span><span class="o">::</span><span class="n">kOk</span><span class="p">)</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="s">"Service rejected: "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">().</span><span class="n">message</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">result</span><span class="p">.</span><span class="n">value</span><span class="p">().</span><span class="n">message</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">'\n'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_11">Python<a class="headerlink" href="#python_11" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">change_master_mode</span><span class="p">(</span><span class="n">sdk</span><span class="p">,</span> <span class="n">requested</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">sdk</span><span class="o">.</span><span class="n">master</span><span class="p">()</span><span class="o">.</span><span class="n">set_mode</span><span class="p">(</span><span class="n">requested</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">result</span> <span class="o">!=</span> <span class="n">MasterResult</span><span class="o">.</span><span class="n">OK</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Service rejected: "</span> <span class="o">+</span> <span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="send-a-single-arm-target">Send a single-arm target<a class="headerlink" href="#send-a-single-arm-target" title="Permanent link">&para;</a></h2>
+<p>First follow <a href="development.html#prepare-and-end-a-task">Prepare and end a task</a> to configure the channel, devices and task. Generate seven finite rad targets in device order from fresh feedback within model limits, and use actual position feedback to confirm completion. See <a href="api.html#armclient"><code>ArmClient::send_joint_positions</code></a> for complete constraints.</p>
+<h3 id="c_12">C++<a class="headerlink" href="#c_12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">send_right_arm</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">target</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">arm</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">Side</span><span class="o">::</span><span class="n">kRight</span><span class="p">).</span><span class="n">send_joint_positions</span><span class="p">(</span><span class="n">target</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">sent</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">sent</span><span class="p">.</span><span class="n">message</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_12">Python<a class="headerlink" href="#python_12" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">send_right_arm</span><span class="p">(</span><span class="n">sdk</span><span class="p">,</span> <span class="n">target</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Expected 7 joint positions"</span><span class="p">)</span>
+    <span class="n">sdk</span><span class="o">.</span><span class="n">arm</span><span class="p">(</span><span class="n">Side</span><span class="o">.</span><span class="n">RIGHT</span><span class="p">)</span><span class="o">.</span><span class="n">send_joint_positions</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</code></pre></div>
+<p>No send error means local submission succeeded. Compare fresh right-arm feedback with the target using application-defined tolerance. Stop sending and reassess runtime conditions on kStaleState or kMotionNotAllowed.</p>
+<h2 id="wholebody-two-arm-command">WholeBody two-arm command<a class="headerlink" href="#wholebody-two-arm-command" title="Permanent link">&para;</a></h2>
+<p>Use the same motion prerequisites, with both arms prepared. Pass an explicit task-compatible channel and application-planned targets. This example updates both arms only; inspect each arm feedback to determine completion.</p>
+<h3 id="c_13">C++<a class="headerlink" href="#c_13" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">send_two_arms</span><span class="p">(</span><span class="n">north</span><span class="o">::</span><span class="n">NorthSDK</span><span class="o">&amp;</span><span class="w"> </span><span class="n">sdk</span><span class="p">,</span><span class="w"> </span><span class="n">north</span><span class="o">::</span><span class="n">CommandChannel</span><span class="w"> </span><span class="n">channel</span><span class="p">,</span>
+<span class="w">                   </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">left</span><span class="p">,</span>
+<span class="w">                   </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">array</span><span class="o">&lt;</span><span class="kt">float</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">north</span><span class="o">::</span><span class="n">ArmCommand</span><span class="w"> </span><span class="n">left_command</span><span class="p">,</span><span class="w"> </span><span class="n">right_command</span><span class="p">;</span>
+<span class="w">    </span><span class="n">left_command</span><span class="p">.</span><span class="n">joints</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">left</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">left</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="w">    </span><span class="n">right_command</span><span class="p">.</span><span class="n">joints</span><span class="p">.</span><span class="n">position</span><span class="p">.</span><span class="n">assign</span><span class="p">(</span><span class="n">right</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span><span class="w"> </span><span class="n">right</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+<span class="w">    </span><span class="n">north</span><span class="o">::</span><span class="n">WholeBodyCommand</span><span class="w"> </span><span class="n">command</span><span class="p">;</span>
+<span class="w">    </span><span class="n">command</span><span class="p">.</span><span class="n">left_arm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left_command</span><span class="p">;</span>
+<span class="w">    </span><span class="n">command</span><span class="p">.</span><span class="n">right_arm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right_command</span><span class="p">;</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">sent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sdk</span><span class="p">.</span><span class="n">whole_body</span><span class="p">().</span><span class="n">send</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span><span class="w"> </span><span class="n">command</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">sent</span><span class="p">)</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">runtime_error</span><span class="p">(</span><span class="n">sent</span><span class="p">.</span><span class="n">message</span><span class="p">());</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="python_13">Python<a class="headerlink" href="#python_13" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">send_two_arms</span><span class="p">(</span><span class="n">sdk</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">left</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">7</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">right</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Expected 7 positions for each arm"</span><span class="p">)</span>
+    <span class="n">left_command</span><span class="p">,</span> <span class="n">right_command</span> <span class="o">=</span> <span class="n">ArmCommand</span><span class="p">(),</span> <span class="n">ArmCommand</span><span class="p">()</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">north_sdk</span><span class="w"> </span><span class="kn">import</span> <span class="n">JointCommand</span>
+    <span class="n">left_joints</span><span class="p">,</span> <span class="n">right_joints</span> <span class="o">=</span> <span class="n">JointCommand</span><span class="p">(),</span> <span class="n">JointCommand</span><span class="p">()</span>
+    <span class="n">left_joints</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">left</span><span class="p">)</span>
+    <span class="n">right_joints</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">right</span><span class="p">)</span>
+    <span class="n">left_command</span><span class="o">.</span><span class="n">joints</span> <span class="o">=</span> <span class="n">left_joints</span>
+    <span class="n">right_command</span><span class="o">.</span><span class="n">joints</span> <span class="o">=</span> <span class="n">right_joints</span>
+    <span class="n">command</span> <span class="o">=</span> <span class="n">WholeBodyCommand</span><span class="p">()</span>
+    <span class="n">command</span><span class="o">.</span><span class="n">left_arm</span> <span class="o">=</span> <span class="n">left_command</span>
+    <span class="n">command</span><span class="o">.</span><span class="n">right_arm</span> <span class="o">=</span> <span class="n">right_command</span>
+    <span class="n">sdk</span><span class="o">.</span><span class="n">whole_body</span><span class="p">()</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">channel</span><span class="p">,</span> <span class="n">command</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="api.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: Software Service Interface">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                Software Service Interface
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/manual.js"></script>
+      
+        <script src="../assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,26 @@
+[Unit]
+Description=NorthSDK shared gPTP synchronization manager
+Requires=northsdk-timesync.socket
+After=network.target
+
+[Service]
+ExecStartPre=/usr/bin/python3 -I /opt/northsdk-timesync/service.py --recover
+ExecStopPost=/usr/bin/python3 -I /opt/northsdk-timesync/service.py --recover
+ExecStart=/usr/bin/python3 -I /opt/northsdk-timesync/service.py
+User=root
+RuntimeDirectory=northsdk-timesync
+RuntimeDirectoryMode=0755
+RuntimeDirectoryPreserve=yes
+NoNewPrivileges=yes
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_RAW CAP_SYS_TIME CAP_DAC_READ_SEARCH
+ProtectSystem=strict
+ProtectHome=yes
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+PrivateTmp=yes
+# systemctl uses the system manager bus; unit files stay read-only here.
+ReadWritePaths=/run/northsdk-timesync
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6 AF_PACKET AF_NETLINK
+KillMode=control-group
+TimeoutStopSec=45
+Restart=on-failure

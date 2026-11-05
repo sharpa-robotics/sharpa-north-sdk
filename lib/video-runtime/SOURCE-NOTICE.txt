@@ -1,0 +1,6 @@
+Unmodified Ubuntu libraries: exact binary/source package versions are in MANIFEST.json.
+Corresponding source packages (including Ubuntu patches) must accompany external delivery
+or be made available by the distributor under the relevant licenses.
+Obtain with: apt-get source SOURCE=SOURCE_VERSION in a matching Ubuntu source repository.
+Copyright and license notices: licenses/. Custom FFmpeg source and build flags: sources/.
+NVIDIA drivers, glibc and system C++ runtimes are not included.

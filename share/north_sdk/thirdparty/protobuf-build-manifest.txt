@@ -1,0 +1,5 @@
+version=3.12.4
+source_url=https://github.com/protocolbuffers/protobuf/releases/download/v3.12.4/protobuf-cpp-3.12.4.tar.gz
+source_sha256=ccfbaaba52f67e0e6536a05f3df3f6618620d255513cfca3a07f5935b624e26b
+platform=x86_64
+linkage=shared

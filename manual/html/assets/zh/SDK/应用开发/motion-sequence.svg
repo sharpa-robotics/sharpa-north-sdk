@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1050" viewBox="0 0 1200 1050" role="img" aria-labelledby="title description">
+<title id="title">关节命令提交与动作完成的区别</title>
+<desc id="description">应用准备运行条件，等待新鲜 RUNNING，提交规划目标，再依据设备反馈判断动作完成。</desc>
+<defs>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#2563eb"/></marker>
+              <marker id="muted-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#64748b"/></marker>
+            </defs>
+            <style>
+              text{font-family:"Noto Sans CJK SC",Arial,sans-serif;fill:#1e293b}
+              .title{font-size:30px;font-weight:700}.heading{font-size:24px;font-weight:700}
+              .body{font-size:22px}.small{font-size:19px}.code{font-family:"DejaVu Sans Mono","Noto Sans CJK SC",monospace;font-size:20px}
+              .muted{fill:#475569}.blue{fill:#1d4ed8}.green{fill:#047857}.red{fill:#b91c1c}
+            </style>
+<rect width="1200" height="1050" rx="16" fill="#f8fafc"/>
+<text x="36" y="53" class="title" text-anchor="start">关节命令提交与动作完成的区别</text>
+<rect x="36" y="85" width="1128" height="107" rx="12" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+<text x="60" y="119" class="body" text-anchor="start">调用前：连接成功、任务准备好、设备已使能并处于位置控制模式。</text>
+<text x="60" y="154" class="body" text-anchor="start">明确命令通道；目标由应用规划并限幅。</text>
+<rect x="55" y="220" width="270" height="54" rx="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="190" y="255" class="heading" text-anchor="middle">应用</text>
+<line x1="190" y1="274" x2="190" y2="968" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7 7"/>
+<rect x="465" y="220" width="270" height="54" rx="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="600" y="255" class="heading" text-anchor="middle">North SDK</text>
+<line x1="600" y1="274" x2="600" y2="968" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7 7"/>
+<rect x="875" y="220" width="270" height="54" rx="12" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="1010" y="255" class="heading" text-anchor="middle">机器人</text>
+<line x1="1010" y1="274" x2="1010" y2="968" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="7 7"/>
+<text x="805" y="315" class="small" text-anchor="middle">新鲜 Master 状态：RUNNING</text>
+<line x1="1010" y1="333" x2="600" y2="333" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="395" y="382" class="small" text-anchor="middle">接收状态并确认运行条件</text>
+<line x1="600" y1="400" x2="190" y2="400" stroke="#64748b" stroke-width="2.5" marker-end="url(#muted-arrow)" stroke-dasharray="7 6"/>
+<text x="395" y="450" class="code" text-anchor="middle">send_joint_positions(target)</text>
+<line x1="190" y1="468" x2="600" y2="468" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<rect x="452" y="494" width="298" height="109" rx="12" fill="#dbeafe" stroke="#93c5fd" stroke-width="1.5"/>
+<text x="601" y="526" class="small blue" text-anchor="middle">校验目标与运行状态</text>
+<text x="601" y="557" class="small blue" text-anchor="middle">新鲜 RUNNING</text>
+<text x="601" y="586" class="small blue" text-anchor="middle">通道与 Master 模式匹配</text>
+<rect x="36" y="507" width="358" height="100" rx="12" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+<text x="58" y="539" class="small red" text-anchor="start">校验失败：不提交命令</text>
+<text x="58" y="571" class="small red" text-anchor="start">应用检查错误，重新确认条件</text>
+<text x="805" y="641" class="small" text-anchor="middle">校验通过 → 提交命令</text>
+<line x1="600" y1="659" x2="1010" y2="659" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="395" y="710" class="small green" text-anchor="middle">Status 成功：提交成功</text>
+<line x1="600" y1="728" x2="190" y2="728" stroke="#64748b" stroke-width="2.5" marker-end="url(#muted-arrow)" stroke-dasharray="7 6"/>
+<text x="805" y="780" class="small" text-anchor="middle">后续设备状态反馈</text>
+<line x1="1010" y1="798" x2="600" y2="798" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="395" y="848" class="small" text-anchor="middle">on_state / latest_state：新鲜位置</text>
+<line x1="600" y1="866" x2="190" y2="866" stroke="#64748b" stroke-width="2.5" marker-end="url(#muted-arrow)" stroke-dasharray="7 6"/>
+<rect x="36" y="891" width="406" height="73" rx="12" fill="#d1fae5" stroke="#6ee7b7" stroke-width="1.5"/>
+<text x="239" y="920" class="small green" text-anchor="middle">比较目标与实际位置</text>
+<text x="239" y="949" class="small green" text-anchor="middle">按应用容差判断完成</text>
+<text x="36" y="1011" class="small muted" text-anchor="start">WholeBody 在 send(channel, command) 中传通道；单部位使用 SdkConfig.command_channel。</text>
+</svg>

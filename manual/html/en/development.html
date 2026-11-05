@@ -1,0 +1,2209 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Sharpa North SDK 用户手册 / User Manual">
+      
+      
+      
+      
+        <link rel="prev" href="overview.html">
+      
+      
+        <link rel="next" href="api.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Application Development - North SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/manual.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#application-development" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../index.html" title="North SDK" class="md-header__button md-logo" aria-label="North SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            North SDK
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Application Development
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="North SDK" class="md-nav__button md-logo" aria-label="North SDK" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    North SDK
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    首页 / Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    中文
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    中文
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zh/overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK 概览
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zh/development.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    应用开发
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zh/api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件服务接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zh/examples.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    例程参考
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    English
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    English
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="overview.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SDK Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Development
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="development.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application Development
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#packages-and-runtime-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packages and runtime environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-connect-the-robot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Connect the robot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-the-sdk-and-robot-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Set the SDK and robot address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-the-read-only-diagnostic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Run the read-only diagnostic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-receive-left-arm-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Receive left-arm state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-the-c-example-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build the C++ example (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completion-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-run-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First-run troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First-run troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-or-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package or version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time synchronization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video environment setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Video environment setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-drivers-and-bundled-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVIDIA drivers and bundled runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-video-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check the video environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-the-first-video-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive the first video stream
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscriptions-and-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscriptions and caches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motion-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motion control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motion control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-and-end-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prepare and end a task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-arrays-and-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joint arrays and coordinates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motion-protection-and-trajectory-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motion protection and trajectory processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motion protection and trajectory processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-admission-and-fault-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command admission and fault protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-ranges-and-velocity-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position ranges and velocity constraints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Position ranges and velocity constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torso-and-hands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Torso and hands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chassis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chassis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smoothing-continuous-position-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smoothing continuous position commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shutdown-and-reconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shutdown and reconnect
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="api.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software Service Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example Code Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#packages-and-runtime-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Packages and runtime environment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quick Start">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-connect-the-robot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Connect the robot
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-set-the-sdk-and-robot-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Set the SDK and robot address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-run-the-read-only-diagnostic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Run the read-only diagnostic
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-receive-left-arm-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Receive left-arm state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Python users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-the-c-example-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build the C++ example (optional)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completion-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion criteria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#first-run-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First-run troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First-run troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#package-or-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package or version
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shared-libraries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shared libraries
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-synchronization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time synchronization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-environment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Video environment setup
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Video environment setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nvidia-drivers-and-bundled-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NVIDIA drivers and bundled runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-the-video-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Check the video environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receive-the-first-video-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receive the first video stream
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#subscriptions-and-caches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subscriptions and caches
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motion-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motion control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motion control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prepare-and-end-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prepare and end a task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joint-arrays-and-coordinates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Joint arrays and coordinates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motion-protection-and-trajectory-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Motion protection and trajectory processing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Motion protection and trajectory processing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#command-admission-and-fault-protection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Command admission and fault protection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#position-ranges-and-velocity-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Position ranges and velocity constraints
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Position ranges and velocity constraints">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#arms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arms
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#torso-and-hands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Torso and hands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chassis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Chassis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#smoothing-continuous-position-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smoothing continuous position commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shutdown-and-reconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shutdown and reconnect
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="application-development">Application Development<a class="headerlink" href="#application-development" title="Permanent link">&para;</a></h1>
+<div class="manual-language"><a href="../zh/development.html">中文</a></div>
+
+<h2 id="packages-and-runtime-environment">Packages and runtime environment<a class="headerlink" href="#packages-and-runtime-environment" title="Permanent link">&para;</a></h2>
+<p>The package contains C++ headers and shared libraries, Python bindings, examples, and video runtime dependencies. This manual recommends the following development environment.</p>
+<table>
+<thead>
+<tr>
+<th>Development system</th>
+<th>Recommended Python interpreter</th>
+<th>C++ API</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ubuntu 22.04 LTS x86_64</td>
+<td>CPython 3.10.x</td>
+<td>C++17</td>
+</tr>
+<tr>
+<td>Ubuntu 24.04 LTS x86_64</td>
+<td>CPython 3.12.x</td>
+<td>C++17</td>
+</tr>
+</tbody>
+</table>
+<p>Other Linux x86_64 environments must meet the minimum runtime symbol requirements recorded in the package BUILD-MANIFEST.json. Compatibility requires validation in the target environment.</p>
+<p>The development environment provides the Python interpreter. Its minor version and architecture must match a binding included in the package, as listed in the package manifest. This also applies to virtual environments. Python is unnecessary for C++-only applications.</p>
+<p>Extract the entire package into a dedicated directory and preserve its structure. GStreamer runtime libraries and required video plugins are bundled; installing system GStreamer is unnecessary. NVIDIA drivers are not bundled; see <a href="#video-environment-setup">Video environment setup</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Directory or file</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>include/north_sdk/</code></td>
+<td>Public C++ headers</td>
+</tr>
+<tr>
+<td><code>lib/</code></td>
+<td>SDK and supporting runtime libraries</td>
+</tr>
+<tr>
+<td><code>lib/python/</code></td>
+<td>Bindings for the target Python version</td>
+</tr>
+<tr>
+<td><code>lib/video-runtime/</code></td>
+<td>Bundled video libraries, plugins and tools</td>
+</tr>
+<tr>
+<td><code>bin/</code></td>
+<td>C++ bring-up and connection diagnostic programs</td>
+</tr>
+<tr>
+<td><code>examples/python/</code></td>
+<td>Python examples and environment check script</td>
+</tr>
+<tr>
+<td><code>manual/</code></td>
+<td>User manual</td>
+</tr>
+<tr>
+<td><code>setup.bash</code></td>
+<td>Load this package's library, Python and video plugin paths</td>
+</tr>
+<tr>
+<td><code>BUILD-MANIFEST.json</code></td>
+<td>Build information, Python ABI and dependencies</td>
+</tr>
+</tbody>
+</table>
+<p>To update, replace the complete package, reload its environment and recheck import, read-only connection and state reception.</p>
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<p>This section connects to the robot and receives the first state stream with the fewest steps, without sending motion, mode, calibration or power commands.</p>
+<blockquote>
+<p><strong>Safety:</strong> On a first connection, run only the read-only programs in this section. Do not call <code>send_*()</code>, <code>set_mode()</code>, <code>enable()</code>, <code>reset()</code>, calibration or Power management APIs.</p>
+</blockquote>
+<h3 id="1-connect-the-robot">1. Connect the robot<a class="headerlink" href="#1-connect-the-robot" title="Permanent link">&para;</a></h3>
+<p>Connect the development computer to the Ethernet port led out from the switch on the robot’s rear right side. Power on the robot and wait for its software to start. State communication and time synchronization both use this wired connection.</p>
+<p>The default robot IP is <code>192.168.100.100</code>; the SDK communicates over UDP port <code>7449</code>. For a direct connection, open Ubuntu Settings → Network → Wired → IPv4 and select Manual. For example, set the computer to <code>192.168.100.10</code> with netmask <code>255.255.255.0</code>, leaving gateway and DNS blank. Check that the address is unused. Use the actual subnet if changed at delivery.</p>
+<h3 id="2-set-the-sdk-and-robot-address">2. Set the SDK and robot address<a class="headerlink" href="#2-set-the-sdk-and-robot-address" title="Permanent link">&para;</a></h3>
+<p>Replace the SDK path below with your extraction directory. Use the default robot address unless changed for your delivery.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">NORTHSDK_PREFIX</span><span class="o">=</span>/absolute/path/to/north-sdk
+<span class="nb">export</span><span class="w"> </span><span class="nv">NORTHSDK_ENDPOINT</span><span class="o">=</span>udp/192.168.100.100:7449
+<span class="nb">source</span><span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/setup.bash"</span>
+</code></pre></div>
+<p>Environment variables apply only to this terminal and its child processes; configure new terminals separately.</p>
+<p><code>NORTHSDK_PREFIX</code> points to the extracted SDK root containing <code>setup.bash</code>.</p>
+<p>Before first use of automatic time synchronization, run this one-time host setup from the ordinary development account:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/tools/setup-host"</span><span class="w"> </span>--user<span class="w"> </span><span class="s2">"</span><span class="nv">$USER</span><span class="s2">"</span>
+<span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/tools/setup-host"</span><span class="w"> </span>check
+</code></pre></div>
+<p>This installs the host time-sync component and authorizes the current account. Applications subsequently run without <code>sudo</code>; repeat setup from the new package after an SDK update. Software synchronization may step system time and temporarily pause system time services. Their previous service state is restored after the last time-sync session closes. See <a href="#time-synchronization">Time synchronization</a> to disable it.</p>
+<h3 id="3-run-the-read-only-diagnostic">3. Run the read-only diagnostic<a class="headerlink" href="#3-run-the-read-only-diagnostic" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/bin/north_sdk_robot_smoke"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--endpoint<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span><span class="w"> </span>--seconds<span class="w"> </span><span class="m">5</span>
+</code></pre></div>
+<p>When the basic connection is healthy, the final line is:</p>
+<div class="highlight"><pre><span></span><code>PASS
+</code></pre></div>
+<p><code>PASS</code> means Master status, hardware health and at least one heartbeat were received. Check each required device stream against the actual configuration; <code>silent</code> means no sample was received for that stream.</p>
+<h3 id="4-receive-left-arm-state">4. Receive left-arm state<a class="headerlink" href="#4-receive-left-arm-state" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/bin/north_sdk_quickstart"</span><span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span>
+</code></pre></div>
+<p>When the left arm is online and publishing, output resembles:</p>
+<div class="highlight"><pre><span></span><code>left arm seq=1234 joints=7
+</code></pre></div>
+<p>Press Ctrl+C to exit. If the robot has no left arm, use streams for devices actually installed as reported by <code>robot_smoke</code>.</p>
+<h3 id="python-users">Python users<a class="headerlink" href="#python-users" title="Permanent link">&para;</a></h3>
+<p>Run <code>python3 --version</code> and check that the interpreter minor version matches an included binding. CPython 3.10.x on Ubuntu 22.04 and CPython 3.12.x on Ubuntu 24.04 are recommended; virtual environments must also use an interpreter minor version supported by the package.</p>
+<p>Step 2 already sets the Python module path. Run the example directly:</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/examples/python/quickstart.py"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--endpoint<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span>
+</code></pre></div>
+<h3 id="build-the-c-example-optional">Build the C++ example (optional)<a class="headerlink" href="#build-the-c-example-optional" title="Permanent link">&para;</a></h3>
+<p>After the prebuilt program succeeds, verify the C++ development environment with one <code>g++</code> command:</p>
+<div class="highlight"><pre><span></span><code>g++<span class="w"> </span>-std<span class="o">=</span>c++17<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/examples/cpp/quickstart.cpp"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-I<span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/include"</span><span class="w"> </span>-L<span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/lib"</span><span class="w"> </span>-lnorth_sdk<span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-Wl,-rpath,<span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/lib"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-o<span class="w"> </span>north_sdk_quickstart
+
+./north_sdk_quickstart<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span>
+</code></pre></div>
+<p><code>-L</code> locates link libraries and <code>-Wl,-rpath</code> records the SDK library directory. Still load <code>setup.bash</code> before running to select bundled video libraries and plugins. Rebuild or update the runtime path if the SDK directory moves.</p>
+<h3 id="completion-criteria">Completion criteria<a class="headerlink" href="#completion-criteria" title="Permanent link">&para;</a></h3>
+<p>The read-only bring-up is complete when:</p>
+<ul>
+<li><code>robot_smoke</code> reports <code>PASS</code>;</li>
+<li>streams required by the application continuously receive samples;</li>
+<li>the C++ or Python example exits cleanly;</li>
+</ul>
+<p>Continue with the subscription and motion guidance below, then choose task examples in <a href="examples.html">Example Code Reference</a>. If bring-up fails, see <a href="#first-run-troubleshooting">First-run troubleshooting</a> below.</p>
+<h3 id="first-run-troubleshooting">First-run troubleshooting<a class="headerlink" href="#first-run-troubleshooting" title="Permanent link">&para;</a></h3>
+<p>For first-connection, startup or Python import failures, check the package, shared libraries and network in that order. These checks reuse the environment from step 2 and are needed only on failure.</p>
+<h4 id="package-or-version">Package or version<a class="headerlink" href="#package-or-version" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="nb">test</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/include/north_sdk/NorthSDK.h"</span>
+<span class="nb">test</span><span class="w"> </span>-f<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/lib/libnorth_sdk.so"</span>
+cat<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/Version"</span>
+</code></pre></div>
+<p>Python import check:</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">"import north_sdk; print(north_sdk.NorthSDK.version())"</span>
+</code></pre></div>
+<p>If you see <code>No module named 'north_sdk._north_sdk'</code>, check that the extension exists and matches your Python version:</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>--version
+ls<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">"</span>/lib/python/north_sdk/_north_sdk*.so
+</code></pre></div>
+<p>Check the package manifest and extensions provided in <code>lib/python/north_sdk/</code>. A <code>cpython-312</code> filename tag requires CPython 3.12. Switch to a matching interpreter or obtain a package containing the required binding. Replace the package if an extension listed in its manifest is missing.</p>
+<h4 id="shared-libraries">Shared libraries<a class="headerlink" href="#shared-libraries" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>ldd<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/bin/north_sdk_quickstart"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'north_sdk|zenoh|protobuf|not found'</span>
+</code></pre></div>
+<p>North SDK, Zenoh and Protobuf should come from one package. If a library is <code>not found</code> or resolves to another SDK/ROS environment, fix <code>LD_LIBRARY_PATH</code>.</p>
+<h4 id="network">Network<a class="headerlink" href="#network" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>ip<span class="w"> </span>route<span class="w"> </span>get<span class="w"> </span><span class="m">192</span>.168.100.100
+</code></pre></div>
+<p>Replace the IP with the actual robot address and verify the intended interface. Use <code>ping</code> only when ICMP is permitted. A failed ping does not necessarily mean Zenoh is unavailable; <code>robot_smoke</code> is authoritative.</p>
+<h2 id="time-synchronization">Time synchronization<a class="headerlink" href="#time-synchronization" title="Permanent link">&para;</a></h2>
+<p>The SDK prepares gPTP synchronization after establishing communication. Complete the <a href="#2-set-the-sdk-and-robot-address">host setup</a> before first use.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Software mode (default)</td>
+<td>Adjusts host system time. The NIC must support software transmit/receive timestamps.</td>
+</tr>
+<tr>
+<td>Hardware mode</td>
+<td>Before SDK creation, set <code>config.time_sync.mode</code> to <code>TimeSyncMode::kHardware</code> (C++) or <code>TimeSyncMode.HARDWARE</code> (Python). Requires hardware timestamps and a NIC PHC; adjusts only the NIC clock.</td>
+</tr>
+<tr>
+<td>Disable</td>
+<td>Set <code>config.time_sync.enabled = false</code> (C++) or <code>False</code> (Python) before SDK creation.</td>
+</tr>
+</tbody>
+</table>
+<p>Check synchronization with:</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/examples/python/time_sync_status.py"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>--endpoint<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span><span class="w"> </span>--mode<span class="w"> </span>software<span class="w"> </span>--seconds<span class="w"> </span><span class="m">10</span>
+</code></pre></div>
+<p>When <code>state</code> is <code>READY</code> and <code>robot_time_ns</code> is present, use <code>sdk.robot_time_ns()</code> to read synchronized time. Robot time uses the gPTP domain and is not guaranteed to match UTC.</p>
+<p>By default, a synchronization failure makes <code>connect()</code> return an error while retaining communication. Inspect <code>time_sync_diagnostics()</code> for the cause; the status script shows how to handle the error and continue using the connection. If synchronization is lost during operation, wait for readiness before resuming calculations that depend on synchronized time.</p>
+<p>For communication-only checks, add <code>--no-time-sync</code> to <code>north_sdk_robot_smoke</code>. See <a href="api.html#time-sync-parameters">Time-sync parameters</a> for configuration and diagnostic fields.</p>
+<h2 id="video-environment-setup">Video environment setup<a class="headerlink" href="#video-environment-setup" title="Permanent link">&para;</a></h2>
+<p>Complete this section when using video. First load the package environment as described in Quick Start. GStreamer runtime libraries, parsing/conversion/JPEG plugins, NVIDIA decoder plugins and a minimal H.264/H.265 software decoder are bundled; installing system GStreamer is unnecessary.</p>
+<h3 id="nvidia-drivers-and-bundled-runtime">NVIDIA drivers and bundled runtime<a class="headerlink" href="#nvidia-drivers-and-bundled-runtime" title="Permanent link">&para;</a></h3>
+<p>NVIDIA NVDEC is the default backend. The discrete GPU must support the camera's H.264/H.265 coding profile, with NVIDIA driver and decode libraries matched to the GPU and Ubuntu release. Install NVIDIA drivers separately.</p>
+<p>Check the driver first:</p>
+<div class="highlight"><pre><span></span><code>nvidia-smi<span class="w"> </span>-L
+</code></pre></div>
+<p>If no GPU is listed, follow the <a href="https://ubuntu.com/server/docs/nvidia-drivers-installation/">Ubuntu driver installation instructions</a> to install or repair the driver. NVDEC uses driver-provided <code>libcuda.so.1</code> and <code>libnvcuvid.so.1</code>. See <a href="https://developer.nvidia.com/video-encode-decode-support-matrix">NVIDIA's decode support matrix</a> for supported input profiles.</p>
+<p><code>setup.bash</code> sets SDK video library, plugin and cache paths. Load it in each terminal or application launch environment, and use the current SDK’s runtime and plugins. If the application already loads another GStreamer runtime, receive video in a separate process.</p>
+<p>The bundled software decoder supports compatibility and functional debugging. Select it explicitly when no NVIDIA GPU is available; it requires no NVIDIA driver. Software decoding has poor performance for multiple or high-resolution streams and may cause severe frame drops and latency, so it is not recommended for real-time tasks. The SDK never automatically falls back from hardware to software decoding.</p>
+<h3 id="check-the-video-environment">Check the video environment<a class="headerlink" href="#check-the-video-environment" title="Permanent link">&para;</a></h3>
+<p>Run in the same terminal as the video example. The default recommended backend is NVIDIA hardware decoding:</p>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/examples/python/check_video_env.py"</span><span class="w"> </span>--backend<span class="w"> </span>nvdec
+</code></pre></div>
+<p>The script checks local SDK loading, GStreamer, video plugins and GPU/driver dependencies; C++ users can run it too. All checks reporting <code>OK</code> and a final <code>PASS</code> mean dependencies are available. Receive video next to verify decoding. On <code>FAIL</code>, check the current package environment, library/plugin completeness and driver status.</p>
+<p>To check software decoding, pass <code>--backend software</code> to the script. Select the capture or preview program’s decoder separately, as shown next and in <a href="examples.html#subscribe-to-head-jpeg">Example Code Reference</a>.</p>
+<h3 id="receive-the-first-video-stream">Receive the first video stream<a class="headerlink" href="#receive-the-first-video-stream" title="Permanent link">&para;</a></h3>
+<p>After the dependency check passes and the robot head-left camera is online, run a single read-only capture for five seconds without saving images:</p>
+<div class="highlight"><pre><span></span><code><span class="s2">"</span><span class="nv">$NORTHSDK_PREFIX</span><span class="s2">/bin/north_sdk_video_jpeg"</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s2">"</span><span class="nv">$NORTHSDK_ENDPOINT</span><span class="s2">"</span><span class="w"> </span>--no-save<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">85</span><span class="w"> </span>--seconds<span class="o">=</span><span class="m">5</span><span class="w"> </span>--nvdec
+</code></pre></div>
+<p><code>0</code> selects head-left and <code>85</code> is JPEG quality. At completion, check that JPEG count is greater than zero and no subscription/decoder errors occurred. If no JPEG arrives, check camera publication, network and decoder requirements. For software decoding, replace <code>--nvdec</code> with <code>--software</code> after passing the corresponding environment check.</p>
+<p>For browser preview, use the scripts in <a href="examples.html#subscribe-to-head-jpeg">Example Code Reference</a>. See <a href="api.html#videoclient">VideoClient</a> for parameters, sources and diagnostics.</p>
+<h2 id="subscriptions-and-caches">Subscriptions and caches<a class="headerlink" href="#subscriptions-and-caches" title="Permanent link">&para;</a></h2>
+<p>Retain the Subscription returned by on_*(). Destruction or close() cancels it. C++ callback arguments are borrowed references; copy data needed after the callback. Keep callbacks short and move expensive or blocking work to application workers.</p>
+<p>latest_*(max_age) returns a local cached copy, aged from local reception. The first call may have no sample or return kStaleState. Wait for a new sample.</p>
+<table>
+<thead>
+<tr>
+<th>Callback policy</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kDropOldest</code></td>
+<td>Default; discard the oldest droppable callback when full</td>
+</tr>
+<tr>
+<td><code>kLatestOnly</code></td>
+<td>Coalesce pending samples per subscription for state display</td>
+</tr>
+<tr>
+<td><code>kReliable</code></td>
+<td>Apply backpressure instead of local dropping</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="No sample, fresh cache and expired cache" src="../assets/en/SDK/Application%20Development/cache-timeline.svg" /></p>
+<p>This example uses max_age=500 ms; 250 ms and 700 ms are local receive ages. latest_* establishes the required state reception without a prior on_* call. A separate on_* subscription also receives callbacks.</p>
+<h2 id="service-results">Service results<a class="headerlink" href="#service-results" title="Permanent link">&para;</a></h2>
+<p>Check the SDK call result first, then the robot service's business result. Monitor heartbeats and error events during operation. C++ uses <code>Result&lt;T&gt;</code> / <code>Status</code>; Python raises <code>NorthSDKError</code>. See <a href="api.html#errors-and-result-checking">Errors and result checking</a> for fields and handling.</p>
+<h2 id="motion-control">Motion control<a class="headerlink" href="#motion-control" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Real motion is not a first-connection test.</strong> SDK validation and the Master gate do not replace a hardware emergency stop, model-specific limits, site risk assessment or the robot-side safety controller.</p>
+</blockquote>
+<p>Before the first motion command, complete at least these checks:</p>
+<ul>
+<li>the emergency stop has been verified and is immediately reachable; the work area is clear and the robot is restrained or supported as required by its model;</li>
+<li>the joint names, array order, positive directions, zero positions, hard/soft limits and recommended velocity/acceleration for this exact model are available;</li>
+<li>fresh feedback is read first and a small target is generated from the current position within model limits;</li>
+<li>the task ID, CommandChannel, Master mode, device enable state and control mode are a supported combination in the delivered robot configuration;</li>
+<li>the control loop stops sending immediately when feedback becomes stale, Master leaves RUNNING, or an SDK/business error occurs;</li>
+<li>reviewed task-stop, emergency-stop and recovery procedures are ready, and the on-site supervisor approves the test.</li>
+</ul>
+<p>See <a href="#motion-protection-and-trajectory-processing">Motion protection and trajectory processing</a> for robot-side protection, numeric limits and interpolation settings.</p>
+<p>Motion commands require fresh RUNNING Master status. Channel-to-mode mapping is below; follow <a href="#prepare-and-end-a-task">Prepare and end a task</a> for setup.</p>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Master mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>kTeleoperation</code></td>
+<td><code>kTeleoperation</code></td>
+</tr>
+<tr>
+<td><code>kInference</code></td>
+<td><code>kInference</code></td>
+</tr>
+<tr>
+<td><code>kAutomation</code></td>
+<td><code>kAutomation</code></td>
+</tr>
+<tr>
+<td><code>kUniversal</code></td>
+<td>Any mode; fresh RUNNING is still required</td>
+</tr>
+</tbody>
+</table>
+<p>Each arm has seven joints, each hand twenty-two, and the torso eight. Positions are in rad, in fixed device order. Populate complete JointCommand.position only; leave name, velocity and torque empty. A successful send means submission succeeded; determine completion from fresh device feedback.</p>
+<p><img alt="Command submission versus device motion completion" src="../assets/en/SDK/Application%20Development/motion-sequence.svg" /></p>
+<p>This sequence illustrates a single-arm position command. Invalid runtime conditions or targets return an SDK error. kUniversal skips mode matching but still requires fresh RUNNING.</p>
+<h3 id="prepare-and-end-a-task">Prepare and end a task<a class="headerlink" href="#prepare-and-end-a-task" title="Permanent link">&para;</a></h3>
+<p>The following example sends position targets with the <code>inference</code> task.</p>
+<ol>
+<li>
+<p><strong>Configure the channel.</strong> Before SDK creation, set <code>config.command_channel = north::CommandChannel::kInference</code> (C++) or <code>config.command_channel = CommandChannel.INFERENCE</code> (Python). WholeBody takes its channel on each <code>send()</code>.</p>
+</li>
+<li>
+<p><strong>Check idle state.</strong> Read fresh Master status and require <code>STANDBY</code>. Check required device health and confirm other controllers have stopped sending commands. End any existing task using its own procedure first.</p>
+</li>
+<li>
+<p><strong>Prepare devices.</strong> Call <code>master().set_mode()</code> with <code>OperationMode::kInference</code> / <code>OperationMode.INFERENCE</code>. For each controlled arm select <code>ControlMode::kJointPosition</code> / <code>ControlMode.JOINT_POSITION</code> and call <code>enable()</code>. For torso select <code>TorsoControlMode::kPosition</code> / <code>TorsoControlMode.POSITION</code> and enable it. For hands select <code>HandMode::kPosition</code> / <code>HandMode.POSITION</code>. Check each service result and device feedback.</p>
+</li>
+<li>
+<p><strong>Start the task.</strong> Call <code>master().start_task("inference")</code>, check <code>MasterResult</code>, then wait for streamed status with <code>RUNNING</code>, <code>Inference</code> and <code>task_id == "inference"</code>. Resolve device health failures before proceeding.</p>
+</li>
+<li>
+<p><strong>Send targets.</strong> Generate complete, small, continuous targets from fresh position feedback. Continue checking task ID, Master phase/mode and device feedback. Use the joint ordering in the next section.</p>
+</li>
+<li>
+<p><strong>End normally.</strong> Stop the control loop. For chassis, keep sending zero velocity until feedback confirms rest. Call <code>master().stop_task()</code>, check its business result, wait for status to leave RUNNING and check device feedback before closing the SDK. On feedback or communication failure, use the site stopping procedure.</p>
+</li>
+</ol>
+<p><code>start_task(task_id)</code> takes a case-sensitive task ID. Customer tasks in the standard configuration are listed below; availability follows the delivered configuration. Unconfigured IDs are rejected.</p>
+<table>
+<thead>
+<tr>
+<th>Task ID</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>inference</code></td>
+<td>Inference control; used in this example.</td>
+</tr>
+<tr>
+<td><code>teleoperation</code></td>
+<td>Teleoperation, with its own preparation flow.</td>
+</tr>
+<tr>
+<td><code>home</code></td>
+<td>Homing; actively moves the robot.</td>
+</tr>
+<tr>
+<td><code>docking</code></td>
+<td>Docking.</td>
+</tr>
+</tbody>
+</table>
+<p>Normal <code>teleoperation</code> completion performs homing and leaves RUNNING after homing and recording finalization. <strong>Stopping teleoperation may cause further motion and must not be used as an emergency stop.</strong></p>
+<p><code>master().exit_estop()</code> starts actuator reset and re-enable, including both arms, torso and hand mode recovery. Clear outgoing motion commands and confirm the site is ready before calling it. A successful response means recovery has started. Wait for Master to leave ESTOP, then check health, control modes and fresh position feedback before starting a new control loop.</p>
+<h3 id="joint-arrays-and-coordinates">Joint arrays and coordinates<a class="headerlink" href="#joint-arrays-and-coordinates" title="Permanent link">&para;</a></h3>
+<p><code>joints.name[i]</code> and <code>joints.position[i]</code> refer to the same axis. Commands use the same fixed index, with <code>name</code> left empty. Print the complete device state and compare it with the joint definition for the delivered model.</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Array indices</th>
+<th>State names</th>
+<th>Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Each arm</td>
+<td>0–6</td>
+<td><code>joint_0</code>–<code>joint_6</code></td>
+<td>J1–J7; <code>Side</code> selects left or right.</td>
+</tr>
+<tr>
+<td>Torso</td>
+<td>0–4</td>
+<td><code>torso_0</code>–<code>torso_4</code></td>
+<td>Body J1–J5; J3/J4 are waist pitch/roll joints.</td>
+</tr>
+<tr>
+<td>Neck</td>
+<td>5–7</td>
+<td><code>torso_5</code>–<code>torso_7</code></td>
+<td>Neck J6–J8, sent with the body as a complete eight-position command.</td>
+</tr>
+<tr>
+<td>Each hand</td>
+<td>0–21</td>
+<td><code>joint_0</code>–<code>joint_21</code></td>
+<td>Twenty-two joints.</td>
+</tr>
+</tbody>
+</table>
+<p>Positions are in rad. Use the delivered model’s joint definitions for each side’s zero positions, positive axes and hand joint groups.</p>
+<h2 id="motion-protection-and-trajectory-processing">Motion protection and trajectory processing<a class="headerlink" href="#motion-protection-and-trajectory-processing" title="Permanent link">&para;</a></h2>
+<p>The robot applies command-step checks, limits and interpolation to motion targets. Joint numbers start at 1; SDK indices start at 0.</p>
+<h3 id="command-admission-and-fault-protection">Command admission and fault protection<a class="headerlink" href="#command-admission-and-fault-protection" title="Permanent link">&para;</a></h3>
+<p>Arms and torso process streamed position commands using <strong>the difference between the new target and the previous accepted target</strong>. A frame within every direct-admission threshold is accepted when no catch-up or recovery is pending. Larger steps have their increments limited; steps above Hold reject the entire frame. Axes meeting the fresh-feedback condition below may be exempted from triggering Hold.</p>
+<table>
+<thead>
+<tr>
+<th>Part and checking space</th>
+<th>Direct-admission threshold</th>
+<th>Hold threshold</th>
+<th>Catch-up rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Each arm, joint angles J1–J7</td>
+<td>0.1745 rad per joint</td>
+<td>J1–J4: 0.3491 rad; J5–J7: 0.5236 rad</td>
+<td>J1–J7: 2.0944, 2.0944, 3.1416, 3.1416, 6.2832, 6.2832, 6.2832 rad/s</td>
+</tr>
+<tr>
+<td>Torso, eight motor axes in motor-ID order 1–8</td>
+<td>0.0349, 0.0349, 0.0698, 0.0698, 0.0698, 0.0873, 0.0873, 0.0873 rad</td>
+<td>0.1047, 0.1047, 0.2094, 0.2094, 0.2094, 0.2618, 0.2618, 0.2618 rad</td>
+<td>1.0472, 1.0472, 1.0472, 1.0472, 1.0472, 1.5708, 1.5708, 1.5708 rad/s</td>
+</tr>
+</tbody>
+</table>
+<p>During catch-up, all axes use the most restrictive axis's increment scaling factor, with a time allowance capped at 20 ms. Catch-up rates apply during catch-up and recovery.</p>
+<p>If feedback is no older than 50 ms and the target-to-feedback difference is within the direct threshold, that axis may avoid Hold caused by a large step from the old target; position commands remain subject to catch-up limits. Recovery from Hold requires checked axes to return within the direct threshold or close to that fresh feedback. <strong>Hold retains the previous target and existing motion may continue.</strong> Torso thresholds are evaluated in motor coordinates.</p>
+<p>The robot also checks measured state and hardware faults:</p>
+<table>
+<thead>
+<tr>
+<th>Protection</th>
+<th>Default setting and behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arm feedback position</td>
+<td>Feedback beyond the position range below expanded outward by 0.0262 rad triggers protection. Application targets must remain within the tabulated position range.</td>
+</tr>
+<tr>
+<td>Arm position tracking error</td>
+<td>When position safety checking is active, target-to-feedback error above 0.3491 rad for J1–J4 or 0.6982 rad for J5–J7 triggers fault protection.</td>
+</tr>
+<tr>
+<td>Arm motor feedback and hardware faults</td>
+<td>Non-finite feedback, drive faults or motor speed above 8.3776 rad/s for motors 1–3 or 26.7035 rad/s for motors 4–7 trigger fault protection.</td>
+</tr>
+<tr>
+<td>Chassis command timeout</td>
+<td>After 100 ms without a valid motion command, the current velocity command expires. Verify standstill using velocity feedback.</td>
+</tr>
+</tbody>
+</table>
+<p>After a fault, inspect heartbeat errors and service responses, then follow the recovery procedure. Self-collision checking is disabled by default; applications must plan collision-free motion.</p>
+<h3 id="position-ranges-and-velocity-constraints">Position ranges and velocity constraints<a class="headerlink" href="#position-ranges-and-velocity-constraints" title="Permanent link">&para;</a></h3>
+<h4 id="arms">Arms<a class="headerlink" href="#arms" title="Permanent link">&para;</a></h4>
+<p>Position targets are clamped per joint as follows. Left and right arms use their respective joint coordinate definitions.</p>
+<table>
+<thead>
+<tr>
+<th>Joint</th>
+<th>Lower position (rad)</th>
+<th>Upper position (rad)</th>
+<th>Joint velocity command clamp (rad/s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>J1</td>
+<td>-1.6144</td>
+<td>4.2673</td>
+<td>8.3776</td>
+</tr>
+<tr>
+<td>J2</td>
+<td>-2.0944</td>
+<td>0.3491</td>
+<td>8.3776</td>
+</tr>
+<tr>
+<td>J3</td>
+<td>-1.2217</td>
+<td>4.3633</td>
+<td>8.3776</td>
+</tr>
+<tr>
+<td>J4</td>
+<td>-0.1745</td>
+<td>2.2689</td>
+<td>11.4605</td>
+</tr>
+<tr>
+<td>J5</td>
+<td>-1.5708</td>
+<td>2.6180</td>
+<td>22.9210</td>
+</tr>
+<tr>
+<td>J6</td>
+<td>-1.0472</td>
+<td>1.5708</td>
+<td>26.7035</td>
+</tr>
+<tr>
+<td>J7</td>
+<td>-0.8727</td>
+<td>0.8727</td>
+<td>26.7035</td>
+</tr>
+</tbody>
+</table>
+<p>The velocity column caps joint velocity commands. Applications plan operating speeds for the task. SDK Arm APIs accept position targets; motor limits and mechanism pose further affect actual motion.</p>
+<h4 id="torso-and-hands">Torso and hands<a class="headerlink" href="#torso-and-hands" title="Permanent link">&para;</a></h4>
+<p>Torso positions are clamped in the fixed SDK joint order:</p>
+<table>
+<thead>
+<tr>
+<th>Joint</th>
+<th>J1</th>
+<th>J2</th>
+<th>J3</th>
+<th>J4</th>
+<th>J5</th>
+<th>J6</th>
+<th>J7</th>
+<th>J8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lower (rad)</td>
+<td>0</td>
+<td>-2.4435</td>
+<td>-0.5236</td>
+<td>-0.5236</td>
+<td>-3.1416</td>
+<td>-1.5708</td>
+<td>-0.5236</td>
+<td>-0.5236</td>
+</tr>
+<tr>
+<td>Upper (rad)</td>
+<td>1.4835</td>
+<td>0</td>
+<td>2.0944</td>
+<td>0.5236</td>
+<td>3.1416</td>
+<td>1.5708</td>
+<td>0.5236</td>
+<td>0.8727</td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="api.html#torsoclient">TorsoClient</a> for joint names and diagram. Combined waist poses must also satisfy mechanism and motor constraints.</p>
+<p>Hand limits follow the delivered model's joint table. Default speed and current coefficients are 0.5 and 0.6 respectively; both are dimensionless.</p>
+<h4 id="chassis">Chassis<a class="headerlink" href="#chassis" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vx</code> / <code>vy</code> acceleration</td>
+<td>10 m/s² each</td>
+<td>Limits body-frame x and y acceleration separately.</td>
+</tr>
+<tr>
+<td><code>vtheta</code> angular acceleration</td>
+<td>10 rad/s²</td>
+<td>Yaw velocity slew limit.</td>
+</tr>
+<tr>
+<td><code>extension_velocity</code> acceleration</td>
+<td>0.5 m/s²</td>
+<td>Stretch-axis velocity slew limit.</td>
+</tr>
+<tr>
+<td>Stretch speed</td>
+<td>0.05 m/s</td>
+<td>Stretch synchronization speed cap.</td>
+</tr>
+<tr>
+<td>Stretch length</td>
+<td>0.357–0.477 m</td>
+<td>Mechanism stretch range; the SDK controls stretch through <code>extension_velocity</code>.</td>
+</tr>
+<tr>
+<td>Wheel motor speed</td>
+<td>31.4159 rad/s</td>
+<td>Motor cap; closed-loop wheel control caps speed at 20.9440 rad/s. The stricter limit applies.</td>
+</tr>
+<tr>
+<td>Steering angle</td>
+<td>±2.7925 rad</td>
+<td>Hard limit: ±2.7925 rad. Steering-angle selection uses a ±2.3562 rad soft band.</td>
+</tr>
+</tbody>
+</table>
+<p>Steering alignment and stretch state can further reduce wheel speed. Determine <code>vx/vy/vtheta</code> ranges from chassis motion constraints. After sending zero velocity, confirm standstill using velocity feedback.</p>
+<h3 id="smoothing-continuous-position-commands">Smoothing continuous position commands<a class="headerlink" href="#smoothing-continuous-position-commands" title="Permanent link">&para;</a></h3>
+<p>Arms and torso use quintic interpolation to convert streamed position targets into higher-rate control targets. Applications continuously send smooth targets.</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Each arm</th>
+<th>Torso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Control period</td>
+<td>1 ms (1000 Hz)</td>
+<td>2 ms (500 Hz)</td>
+</tr>
+<tr>
+<td>Nominal command period</td>
+<td>20 ms</td>
+<td>20 ms</td>
+</tr>
+<tr>
+<td>Interpolation velocity parameter</td>
+<td>10 rad/s</td>
+<td>1.0472 rad/s (motor space)</td>
+</tr>
+<tr>
+<td>Interpolation acceleration parameter</td>
+<td>30 rad/s²</td>
+<td>2.0944 rad/s² (motor space)</td>
+</tr>
+</tbody>
+</table>
+<p>The nominal period is an interpolation reference and allows variations in send intervals. Larger target changes may extend execution time. Interpolation parameters, catch-up rates and joint velocity limits act at different stages. Applications plan velocity, acceleration and jerk.</p>
+<p>The robot connects each segment with a quintic polynomial, matching position, velocity and acceleration at both endpoints:</p>
+<div class="highlight"><pre><span></span><code>q(t) = a0 + a1 t + a2 t² + a3 t³ + a4 t⁴ + a5 t⁵,  0 ≤ t ≤ T
+</code></pre></div>
+<p>Here <code>q</code> is position (rad), <code>T</code> is segment time (s), and the six coefficients are determined by endpoint position, velocity and acceleration. New streamed targets continue from the current motion state.</p>
+<p><img alt="Position target and smoothed control target" src="../assets/en/SDK/Application%20Development/position-smoothing.svg" /></p>
+<p>The figure shows a single segment with zero endpoint velocity and acceleration. With <code>s=t/T</code>, its position is <code>q(t)=q0+(q1−q0)(10s³−15s⁴+6s⁵)</code>. Continuous motion uses the actual endpoint derivatives.</p>
+<p>Segment time is estimated from the command period and extended for larger target changes:</p>
+<div class="highlight"><pre><span></span><code>T0 = clamp(1.5 P, Tc, 0.2 s)
+T  = max(T0, 1.875 × max_i |q1[i] − q0[i]| / vmax)
+</code></pre></div>
+<p><code>P</code> is the estimated command period, <code>Tc</code> the control period, and <code>vmax</code> a positive interpolation velocity parameter. Position and velocity must use the same coordinate space. The 0.2 s cap applies to timing estimation; actual <code>T</code> may be longer. Velocity and acceleration parameters clamp derivative estimates and outputs. Applications must still check velocity, acceleration and jerk over the complete trajectory.</p>
+<p>After a stream stops, the final position is retained and output velocity and acceleration decay within 50 ms. Confirm standstill through device feedback.</p>
+<p>Hands receive the latest complete target directly; applications ensure target continuity. Hand feedback without progress for more than 300 ms is marked stale. Existing targets may continue executing after sending stops; confirm standstill through device feedback.</p>
+<h2 id="shutdown-and-reconnect">Shutdown and reconnect<a class="headerlink" href="#shutdown-and-reconnect" title="Permanent link">&para;</a></h2>
+<p>Finish the application task-stop workflow, then close subscriptions and the SDK. <code>close()</code> cancels subscriptions, clears caches and releases this object’s time-sync session. After the last time-sync session closes, the previous system time services are restored. Recreate user subscriptions after reconnecting. Python can use <code>with NorthSDK(config)</code> to connect and close automatically.</p>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<p>Use this section for data reception, service calls and motion admission after application startup. See <a href="#first-run-troubleshooting">First-run troubleshooting</a> for startup/library/import failures and <a href="#video-environment-setup">Video environment setup</a> for video dependencies and decoding.</p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No state output or silent stream</td>
+<td>Subscription lifetime, installed/online device, robot-side publication and endpoint</td>
+</tr>
+<tr>
+<td>Cache read failure</td>
+<td>Sample reception, max_age and continued device updates</td>
+</tr>
+<tr>
+<td>Call error or service rejection</td>
+<td>Check the SDK error first, then response success/result and message; see <a href="api.html#errors-and-result-checking">Errors and result checking</a></td>
+</tr>
+<tr>
+<td>Device fault during operation</td>
+<td>Stop sending motion targets. Record the subsystem, error_code, fault_codes and Master reason. Resolve emergency-stop or connectivity causes before device recovery; contact support with these details and software versions for persistent faults.</td>
+</tr>
+<tr>
+<td>Time-sync failure or loss</td>
+<td>Check the wired robot connection, host setup and diagnostics; see <a href="#time-synchronization">Time synchronization</a>.</td>
+</tr>
+<tr>
+<td>Motion rejected</td>
+<td>Supported fields, complete targets, command_channel, Master phase and mode</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="overview.html" class="md-footer__link md-footer__link--prev" aria-label="上一页: SDK Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                SDK Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="api.html" class="md-footer__link md-footer__link--next" aria-label="下一页: Software Service Interface">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                Software Service Interface
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/manual.js"></script>
+      
+        <script src="../assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>
